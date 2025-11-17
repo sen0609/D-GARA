@@ -1,0 +1,1098 @@
+[
+  {
+    "id": 1,
+    "description": "打开哔哩哔哩，搜索“稻香”，点击第一个视频，并点击“点赞”按钮",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_like_video",
+    "target_rule_ids": ["rule_bili_data_warning_double_1"]
+  },
+  {
+    "id": 2,
+    "description": "打开哔哩哔哩，搜索“以父之名”，点击第一个视频，并点击“收藏”按钮",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_collect_video",
+    "target_rule_ids": ["rule_bili_app_wifi_check_forced_2"]
+  },
+  {
+    "id": 3,
+    "description": "打开哔哩哔哩，点击“我的”页面中的“历史记录”，点击第一个记录，并且投币",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_coin_video",
+    "target_rule_ids": ["rule_bili_rate_app_double_3"]
+  },
+  {
+    "id": 4,
+    "description": "打开哔哩哔哩，搜索UP主“蓝战非”，进入第一个视频并收藏",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_collect_video",
+    "target_rule_ids": ["rule_bili_app_wifi_check_forced_4"]
+  },
+  {
+    "id": 5,
+    "description": "打开哔哩哔哩，点击首页顶部的“热门”榜单，播放排行第一的视频并点赞",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_like_video",
+    "target_rule_ids": ["rule_bili_youth_mode_forced_5"]
+  },
+  {
+    "id": 6,
+    "description": "打开哔哩哔哩，进入“我的”页面，打开“我的收藏”，播放默认收藏夹的第一个视频并投币",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_coin_video",
+    "target_rule_ids": ["rule_bili_rate_app_double_6"]
+  },
+  {
+    "id": 7,
+    "description": "打开哔哩哔哩，搜索UP主“何同学”，进入其个人空间，播放最新发布的视频并投币",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_coin_video",
+    "target_rule_ids": ["rule_bili_low_battery_forced_7"]
+  },
+  {
+    "id": 8,
+    "description": "打开哔哩哔哩，进入“频道”分区，打开“游戏”频道，播放第一个视频并投币",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_coin_video",
+    "target_rule_ids": ["rule_bili_app_update_double_8"]
+  },
+  {
+    "id": 9,
+    "description": "打开哔哩哔哩，在任意视频中发送一条弹幕“哈哈哈”，然后再点赞该视频",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_like_video",
+    "target_rule_ids": ["rule_bili_low_battery_forced_9"]
+  },
+  {
+    "id": 10,
+    "description": "打开京东，搜索'索尼PS5'，并且进入第一个商品页面，添加至购物车",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_search_add_to_cart",
+    "target_rule_ids": ["rule_jd_low_battery_double_10"]
+  },
+  {
+    "id": 11,
+    "description": "打开京东，搜索“iPhone 15 pro max”并进入标题第一个商品详情页",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_search_and_view_product",
+    "target_rule_ids": ["rule_jd_wifi_check_forced_11"]
+  },
+  {
+    "id": 12,
+    "description": "打开京东，搜索\"三体\"，进入第一个商品页面并在商品详情页中点击“分享”按钮",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_search_and_share_product",
+    "target_rule_ids": ["rule_jd_data_warning_double_12"]
+  },
+  {
+    "id": 13,
+    "description": "打开京东，进入“我的”并点击“商品收藏”进入收藏列表，查看第一个收藏商品页面",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_search_and_view_product",
+    "target_rule_ids": ["rule_jd_low_battery_forced_13"]
+  },
+  {
+    "id": 14,
+    "description": "打开京东，浏览“深度学习”,进入第一个商品，点击客服标签，发送‘什么时候可以发货’给客服",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_search_and_contact_customer_service",
+    "target_rule_ids": ["rule_jd_wifi_check_forced_14"]
+  },
+  {
+    "id": 15,
+    "description": "打开京东，浏览'怡宝矿泉水',进入第一个商品，点击“买家评价”进入评价列表页显示“商品评价",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_view_comments",
+    "target_rule_ids": ["rule_jd_app_crash_forced_15"]
+  },
+  {
+    "id": 16,
+    "description": "打开高德，搜索‘同济大学四平校区’，并且点击收藏",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_search_and_add_favorite",
+    "target_rule_ids": ["rule_amap_low_battery_double_16"]
+  },
+  {
+    "id": 17,
+    "description": "打开高德地图，导航到‘同济大学 四平校区’，选择驾车路线",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_navigate_to_tongji_siping",
+    "target_rule_ids": ["rule_amap_low_battery_forced_17"]
+  },
+  {
+    "id": 18,
+    "description": "打开高德地图，导航到‘同济大学嘉定校区’，选择驾车路线",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_navigate_to_tongji_jiading",
+    "target_rule_ids": ["rule_amap_data_warning_double_18"]
+  },
+  {
+    "id": 19,
+    "description": "打开高德地图，搜索从同济大学四平校区到同济大学嘉定校区的公共交通路线",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_search_bus_route",
+    "target_rule_ids": ["rule_amap_location_permission_prompt_19"]
+  },
+  {
+    "id": 20,
+    "description": "打开高德地图，搜索从同济大学四平校区到复旦大学邯郸校区的公共交通路线",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_search_bus_route",
+    "target_rule_ids": ["rule_amap_wifi_check_forced_20"]
+  },
+  {
+    "id": 21,
+    "description": "打开高德地图，搜索从同济大学四平校区到上海交通大学徐汇校区的公共交通路线",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_search_bus_route",
+    "target_rule_ids": ["rule_amap_location_permission_prompt_21"]
+  },
+  {
+  "id": 22,
+  "description": "Open Facebook, search for a person named 'Justin Bieber', and like the profile of the first result.",
+  "app": "com.facebook.katana",
+  "rule_key": "task_facebook_search_and_view_profile",
+  "target_rule_ids": ["rule_facebook_wifi_check_forced_en_22"]
+  },
+  {
+  "id": 23,
+  "description": "Open Facebook, search for a person named 'Adele Adkins', and like the profile of the first result.",
+  "app": "com.facebook.katana",
+  "rule_key": "task_facebook_search_and_view_profile",
+  "target_rule_ids": ["rule_facebook_data_warning_double_en_23"]
+  },
+  {
+  "id": 24,
+  "description": "Open Facebook, search for a person named 'Bruno Mars', and like the profile of the first result.",
+  "app": "com.facebook.katana",
+  "rule_key": "task_facebook_search_and_view_profile",
+  "target_rule_ids": ["rule_facebook_wifi_check_forced_en_24"]
+  },
+  {
+  "id": 25,
+  "description": "Open Facebook, search for a person named 'Rihanna Fenty', and like the profile of the first result.",
+  "app": "com.facebook.katana",
+  "rule_key": "task_facebook_search_and_view_profile",
+  "target_rule_ids": ["rule_facebook_wifi_check_forced_en_25"]
+  },
+  {
+  "id": 26,
+  "description": "Open Facebook, search for a person named 'Ed Sheeran', and like the profile of the first result.",
+  "app": "com.facebook.katana",
+  "rule_key": "task_facebook_search_and_view_profile",
+  "target_rule_ids": ["rule_facebook_data_warning_double_en_26"]
+  },
+  {
+    "id": 27,
+    "description": "打开携程，搜索从“上海”到“北京”的明天出发的单程机票，并预定第一个机票",
+    "app": "ctrip.android.view",
+    "rule_key": "task_ctrip_search_flight",
+    "target_rule_ids": ["rule_ctrip_low_battery_double_27"]
+  },
+  {
+    "id": 28,
+    "description": "打开携程，搜索“同济大学嘉定校区”的酒店，并查看列表里第一家酒店的详情",
+    "app": "ctrip.android.view",
+    "rule_key": "task_ctrip_search_and_view_hotel",
+    "target_rule_ids": ["rule_ctrip_wifi_check_forced_28"]
+  },
+  {
+    "id": 29,
+    "description": "打开携程，预订一张明天从“上海虹桥”到“北京南”的G开头的高铁二等座",
+    "app": "ctrip.android.view",
+    "rule_key": "task_ctrip_book_train_ticket",
+    "target_rule_ids": ["rule_ctrip_app_update_double_29"]
+  },
+  {
+    "id": 30,
+    "description": "打开携程，进入“旅游/跟团”频道，浏览一个前往“三亚”的5日跟团游产品",
+    "app": "ctrip.android.view",
+    "rule_key": "task_ctrip_browse_tour_package",
+    "target_rule_ids": ["rule_ctrip_data_warning_double_30"]
+  },
+  {
+    "id": 31,
+    "description": "打开携程，搜索“故宫博物院”的门票信息，选择1日游并选择最近的日期并预定",
+    "app": "ctrip.android.view",
+    "rule_key": "task_ctrip_search_attraction_ticket",
+    "target_rule_ids": ["rule_ctrip_location_permission_prompt_31"]
+  },
+  {
+    "id": 37,
+    "description": "Open Facebook, scroll down the news feed once, Like the first post.",
+    "app": "com.facebook.katana",
+    "rule_key": "task_facebook_like_post",
+    "target_rule_ids": ["rule_facebook_data_warning_double_en_37"]
+  },
+  {
+    "id": 38,
+    "description": "Open Facebook, search for a person named 'Tylor Swift', and like the profile of the first result.",
+    "app": "com.facebook.katana",
+    "rule_key": "task_facebook_search_and_view_profile",
+    "target_rule_ids": ["rule_facebook_wifi_check_forced_en_38"]
+  },
+  {
+    "id": 39,
+    "description": "Open Facebook, navigate to your own profile page, and view your friends list.",
+    "app": "com.facebook.katana",
+    "rule_key": "task_facebook_navigate_to_friends",
+    "target_rule_ids": ["rule_facebook_low_battery_double_en_39"]
+  },
+  {
+    "id": 40,
+    "description": "打开哔哩哔哩，搜索“林俊杰-可惜没如果”，点击第一个视频并投币",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_coin_video",
+    "target_rule_ids": ["rule_bili_low_battery_double_40"]
+  },
+  {
+    "id": 41,
+    "description": "打开京东，搜索“大疆无人机”，进入第一个商品页面，并添加至购物车",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_search_add_to_cart",
+    "target_rule_ids": ["rule_jd_data_warning_double_41"]
+  },
+  {
+    "id": 42,
+    "description": "打开高德地图，搜索从故宫到颐和园的公共交通路线",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_search_bus_route",
+    "target_rule_ids": ["rule_amap_wifi_check_forced_42"]
+  },
+  {
+    "id": 43,
+    "description": "打开哔哩哔哩，搜索纪录片“蓝色星球”，并收藏第一个视频",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_collect_video",
+    "target_rule_ids": ["rule_bili_low_battery_double_43"]
+  },
+  {
+    "id": 44,
+    "description": "打开京东，搜索“NVIDIA 4090显卡”，进入第一个商品详情页",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_search_and_view_product",
+    "target_rule_ids": ["rule_jd_app_crash_forced_44"]
+  },
+  {
+    "id": 45,
+    "description": "打开高德地图，导航到“广州塔”，选择驾车路线",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_navigate_to_tongji_siping",
+    "target_rule_ids": ["rule_amap_location_permission_prompt_45"]
+  },
+  {
+    "id": 46,
+    "description": "打开哔哩哔哩，搜索“科技美学”，进入最新视频并投币",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_coin_video",
+    "target_rule_ids": ["rule_bili_wifi_check_forced_46"]
+  },
+  {
+    "id": 47,
+    "description": "打开京东，搜索“清风抽纸”，并查看第一个商品详情",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_search_and_view_product",
+    "target_rule_ids": ["rule_jd_app_crash_forced_47"]
+  },
+  {
+    "id": 48,
+    "description": "打开高德地图，搜索“海底捞火锅 (西单店)”并收藏",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_search_and_add_favorite",
+    "target_rule_ids": ["rule_amap_data_warning_double_48"]
+  },
+  {
+    "id": 49,
+    "description": "打开哔哩哔哩，搜索“ASMR 雨声”，点赞播放量最高的视频",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_like_video",
+    "target_rule_ids": ["rule_bili_youth_mode_forced_49"]
+  },
+  {
+    "id": 50,
+    "description": "打开京东，搜索“三只松鼠坚果”，进入第一个商品并查看买家评价",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_view_comments",
+    "target_rule_ids": ["rule_jd_app_update_double_50"]
+  },
+  {
+    "id": 51,
+    "description": "打开高德地图，搜索“上海博物馆（人民广场馆）”，进入并添加到收藏",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_search_and_add_favorite",
+    "target_rule_ids": ["rule_amap_low_battery_double_51"]
+  },
+  {
+    "id": 52,
+    "description": "打开京东，搜索“活着余华”，查看详情并将第一个结果加入购物车",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_search_add_to_cart",
+    "target_rule_ids": ["rule_jd_app_crash_forced_52"]
+  },
+  {
+    "id": 53,
+    "description": "打开哔哩哔哩，搜索“帕梅拉”，收藏第一个视频",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_collect_video",
+    "target_rule_ids": ["rule_bili_low_battery_forced_53"]
+  },
+  {
+    "id": 54,
+    "description": "打开哔哩哔哩，点击\"热门\"，进入“排行榜”并给第一个视频投币",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_coin_video",
+    "target_rule_ids": ["rule_bili_low_battery_forced_54"]
+  },
+  {
+    "id": 55,
+    "description": "打开京东，搜索“空气炸锅”并加入购物车",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_search_and_contact_customer_service",
+    "target_rule_ids": ["rule_jd_data_warning_double_55"]
+  },
+  {
+    "id": 56,
+    "description": "打开高德地图，导航到“迪士尼乐园”，选择公共交通路线",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_navigate_to_tongji_jiading",
+    "target_rule_ids": ["rule_amap_wifi_check_forced_56"]
+  },
+  {
+    "id": 57,
+    "description": "打开哔哩哔哩，搜索“VLOG”，点赞第一个视频",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_like_video",
+    "target_rule_ids": ["rule_bili_low_battery_forced_57"]
+  },
+  {
+    "id": 58,
+    "description": "打开京东，进入“我的”页面，查看“浏览记录”，并浏览第一个商品",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_search_and_view_product",
+    "target_rule_ids": ["rule_jd_low_battery_double_58"]
+  },
+  {
+    "id": 59,
+    "description": "打开高德地图，搜索到“徐家汇”的驾车路线",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_navigate_to_tongji_siping",
+    "target_rule_ids": ["rule_amap_low_battery_double_59"]
+  },
+  {
+    "id": 60,
+    "description": "打开哔哩哔哩，点击\"热门\"，进入“每周必看”并给第一个视频投币",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_like_video",
+    "target_rule_ids": ["rule_bili_low_battery_double_60"]
+  },
+  {
+    "id": 61,
+    "description": "打开京东，搜索“加湿器”，查看第一个商品的评论",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_view_comments",
+    "target_rule_ids": ["rule_jd_app_crash_forced_61"]
+  },
+  {
+    "id": 62,
+    "description": "打开哔哩哔哩，进入“我的”页面，打开“稍后再看”，播放第一个视频",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_collect_video",
+    "target_rule_ids": ["rule_bili_rate_app_double_62"]
+  },
+  {
+    "id": 63,
+    "description": "打开哔哩哔哩，进入“频道”分区，打开“舞蹈”频道，播放第一个视频并投币",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_coin_video",
+    "target_rule_ids": ["rule_bili_low_battery_forced_63"]
+  },
+  {
+    "id": 64,
+    "description": "打开京东，搜索“显示器”，并进入一个商品页面，分享该商品",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_search_and_share_product",
+    "target_rule_ids": ["rule_jd_low_battery_double_64"]
+  },
+  {
+    "id": 65,
+    "description": "打开携程，搜索从“广州”到“北京”的明天出发的单程机票",
+    "app": "ctrip.android.view",
+    "rule_key": "task_ctrip_search_flight",
+    "target_rule_ids": ["rule_ctrip_low_battery_double_65"]
+  },
+  {
+    "id": 66,
+    "description": "打开携程，搜索“复旦大学邯郸校区”的酒店，并查看列表里第一家酒店的详情",
+    "app": "ctrip.android.view",
+    "rule_key": "task_ctrip_search_and_view_hotel",
+    "target_rule_ids": ["rule_ctrip_wifi_check_forced_66"]
+  },
+  {
+    "id": 67,
+    "description": "打开携程，预订一张明天从“广州南站”到“北京南”的G开头的高铁二等座",
+    "app": "ctrip.android.view",
+    "rule_key": "task_ctrip_book_train_ticket",
+    "target_rule_ids": ["rule_ctrip_app_update_double_67"]
+  },
+  {
+    "id": 68,
+    "description": "打开携程，进入“旅游/跟团”频道，浏览一个前往“广州”的5日跟团游产品",
+    "app": "ctrip.android.view",
+    "rule_key": "task_ctrip_browse_tour_package",
+    "target_rule_ids": ["rule_ctrip_data_warning_double_68"]
+  },
+  {
+    "id": 69,
+    "description": "打开携程，搜索“上海美术馆”的门票信息，选择1日游并选择最近的日期并预定",
+    "app": "ctrip.android.view",
+    "rule_key": "task_ctrip_search_attraction_ticket",
+    "target_rule_ids": ["rule_ctrip_location_permission_prompt_69"]
+  },
+  {
+    "id": 70,
+    "description": "打开携程，搜索从“北京”到“上海”的明天出发的单程机票",
+    "app": "ctrip.android.view",
+    "rule_key": "task_ctrip_search_flight",
+    "target_rule_ids": ["rule_ctrip_low_battery_double_70"]
+  },
+  {
+    "id": 71,
+    "description": "打开携程，搜索“上海交通大学大学徐汇校区”的酒店，并查看列表里第一家酒店的详情",
+    "app": "ctrip.android.view",
+    "rule_key": "task_ctrip_search_and_view_hotel",
+    "target_rule_ids": ["rule_ctrip_wifi_check_forced_71"]
+  },
+  {
+    "id": 72,
+    "description": "打开携程，预订一张明天从“广州南”到“北京西”的G开头的高铁二等座",
+    "app": "ctrip.android.view",
+    "rule_key": "task_ctrip_book_train_ticket",
+    "target_rule_ids": ["rule_ctrip_app_update_double_72"]
+  },
+  {
+    "id": 73,
+    "description": "打开携程，进入“旅游/跟团”频道，浏览一个前往“北京”的5日跟团游产品",
+    "app": "ctrip.android.view",
+    "rule_key": "task_ctrip_browse_tour_package",
+    "target_rule_ids": ["rule_ctrip_data_warning_double_73"]
+  },
+  {
+    "id": 74,
+    "description": "打开携程，搜索“上海博物馆”的门票信息，选择1日游并选择最近的日期并预定",
+    "app": "ctrip.android.view",
+    "rule_key": "task_ctrip_search_attraction_ticket",
+    "target_rule_ids": ["rule_ctrip_location_permission_prompt_74"]
+  },
+  {
+    "id": 75,
+    "description": "Open Facebook, search for a person named 'Leonardo DiCaprio', and follow Leonardo DiCaprio.",
+    "app": "com.facebook.katana",
+    "rule_key": "task_facebook_search_and_view_profile",
+    "target_rule_ids": ["rule_facebook_wifi_check_forced_en_75"]
+  },
+  {
+    "id": 76,
+    "description": "Open Facebook, search for a person named 'Beyoncé', and follow Beyoncé.",
+    "app": "com.facebook.katana",
+    "rule_key": "task_facebook_search_and_view_profile",
+    "target_rule_ids": ["rule_facebook_wifi_check_forced_en_76"]
+  },
+  {
+    "id": 77,
+    "description": "Open Facebook, search for a person named 'Cristiano Ronaldo',  and follow Cristiano Ronaldo.",
+    "app": "com.facebook.katana",
+    "rule_key": "task_facebook_search_and_view_profile",
+    "target_rule_ids": ["rule_facebook_wifi_check_forced_en_77"]
+  },
+  {
+    "id": 78,
+    "description": "Open Facebook, search for a person named 'Dwayne Johnson', follow Dwayne Johnson.",
+    "app": "com.facebook.katana",
+    "rule_key": "task_facebook_search_and_view_profile",
+    "target_rule_ids": ["rule_facebook_wifi_check_forced_en_78"]
+  },
+  {
+    "id": 79,
+    "description": "Open Facebook, search for a person named 'Lady Gaga', follow Lady Gaga.",
+    "app": "com.facebook.katana",
+    "rule_key": "task_facebook_search_and_view_profile",
+    "target_rule_ids": ["rule_facebook_wifi_check_forced_en_79"]
+  },
+  {
+    "id": 80,
+    "description": "打开哔哩哔哩，搜索“身骑白马”，点击第一个视频，并点击“收藏”按钮",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_collect_video",
+    "target_rule_ids": ["rule_bili_wifi_check_forced_80"]
+  },
+  {
+    "id": 81,
+    "description": "打开哔哩哔哩，搜索UP主“影视剧风”，进入第一个视频并收藏",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_collect_video",
+    "target_rule_ids": ["rule_bili_wifi_check_forced_81"]
+  },
+  {
+    "id": 82,
+    "description": "打开哔哩哔哩，搜索UP主“毕导”，进入其个人空间，播放最新发布的视频并投币",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_coin_video",
+    "target_rule_ids": ["rule_bili_low_battery_forced_82"]
+  },
+  {
+    "id": 83,
+    "description": "打开哔哩哔哩，搜索“花海”，点击第一个视频，并点击“收藏”按钮",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_collect_video",
+    "target_rule_ids": ["rule_bili_wifi_check_forced_83"]
+  },
+  {
+    "id": 84,
+    "description": "打开哔哩哔哩，搜索UP主“食贫道”，进入第一个视频并收藏",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_collect_video",
+    "target_rule_ids": ["rule_bili_wifi_check_forced_84"]
+  },
+  {
+    "id": 85,
+    "description": "打开哔哩哔哩，搜索UP主“陶喆的音乐产房”，进入其个人空间，播放最新发布的视频并投币",
+    "app": "tv.danmaku.bili",
+    "rule_key": "task_bili_search_and_coin_video",
+    "target_rule_ids": ["rule_bili_low_battery_forced_85"]
+  },
+  {
+    "id": 86,
+    "description": "打开京东，搜索'任天堂 Switch'，并且进入第一个商品页面，添加至购物车",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_search_add_to_cart",
+    "target_rule_ids": ["rule_jd_low_battery_double_86"]
+  },
+  {
+    "id": 87,
+    "description": "打开京东，搜索“华为 Mate 60 Pro”并进入标题第一个商品详情页",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_search_and_view_product",
+    "target_rule_ids": ["rule_jd_wifi_check_forced_87"]
+  },
+  {
+    "id": 88,
+    "description": "打开京东，搜索\"长安的荔枝\"，进入第一个商品页面并在商品详情页中点击“分享”按钮",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_search_and_share_product",
+    "target_rule_ids": ["rule_jd_data_warning_double_88"]
+  },
+  {
+    "id": 89,
+    "description": "打开京东，进入“我的”并点击“浏览记录”进入收藏列表，查看第一个收藏商品页面",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_search_and_view_product",
+    "target_rule_ids": ["rule_jd_low_battery_forced_89"]
+  },
+  {
+    "id": 90,
+    "description": "打开京东，浏览“电竞椅”,进入第一个商品，点击客服标签，发送‘质保多久’给客服",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_search_and_contact_customer_service",
+    "target_rule_ids": ["rule_jd_wifi_check_forced_90"]
+  },
+  {
+    "id": 91,
+    "description": "打开京东，浏览'农夫山泉',进入第一个商品，点击“买家评价”进入评价列表页显示“商品评价",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_view_comments",
+    "target_rule_ids": ["rule_jd_app_crash_forced_91"]
+  },
+  {
+    "id": 92,
+    "description": "打开高德，搜索‘北京大学’，并且点击收藏",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_search_and_add_favorite",
+    "target_rule_ids": ["rule_amap_low_battery_double_92"]
+  },
+  {
+    "id": 93,
+    "description": "打开高德地图，导航到‘北京大学’，选择驾车路线",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_navigate_to_peking_university",
+    "target_rule_ids": ["rule_amap_low_battery_double_93"]
+  },
+  {
+    "id": 94,
+    "description": "打开高德地图，导航到‘颐和园’，选择驾车路线",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_navigate_to_summer_palace",
+    "target_rule_ids": ["rule_amap_data_warning_double_94"]
+  },
+  {
+    "id": 95,
+    "description": "打开高德地图，搜索从北京大学到中国人民大学的公共交通路线",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_search_bus_route",
+    "target_rule_ids": ["rule_amap_location_permission_prompt_95"]
+  },
+  {
+    "id": 96,
+    "description": "打开高德地图，搜索从北京大学到清华大学的公共交通路线",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_search_bus_route",
+    "target_rule_ids": ["rule_amap_wifi_check_forced_96"]
+  },
+  {
+    "id": 97,
+    "description": "打开高德地图，搜索从北京大学到清华大学的公共交通路线",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_search_bus_route",
+    "target_rule_ids": ["rule_amap_location_permission_prompt_97"]
+  },
+  {
+    "id": 98,
+    "description": "打开京东，搜索“微软 Xbox Series X”，并且进入第一个商品页面，添加至购物车",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_search_add_to_cart",
+    "target_rule_ids": ["rule_jd_low_battery_double_98"]
+  },
+  {
+    "id": 99,
+    "description": "打开京东，搜索“三星 Galaxy S25 Ultra”并进入标题第一个商品详情页",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_search_and_view_product",
+    "target_rule_ids": ["rule_jd_wifi_check_forced_99"]
+  },
+  {
+    "id": 100,
+    "description": "打开京东，搜索“庆余年”，进入第一个商品页面并在商品详情页中点击“分享”按钮",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_search_and_share_product",
+    "target_rule_ids": ["rule_jd_data_warning_double_100"]
+  },
+  {
+    "id": 101,
+    "description": "打开京东，搜索 “雷蛇电竞鼠标” 并进入标题第一个商品详情页",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_search_and_view_product",
+    "target_rule_ids": ["rule_jd_low_battery_forced_101"]
+  },
+  {
+    "id": 102,
+    "description": "打开京东，浏览“机械键盘”,进入第一个商品，点击客服标签，发送‘有静音款吗’给客服",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_search_and_contact_customer_service",
+    "target_rule_ids": ["rule_jd_wifi_check_forced_102"]
+  },
+  {
+    "id": 103,
+    "description": "打开京东，浏览“百岁山”,进入第一个商品，点击“买家评价”进入评价列表页",
+    "app": "com.jingdong.app.mall",
+    "rule_key": "task_jd_view_comments",
+    "target_rule_ids": ["rule_jd_app_crash_forced_103"]
+  },
+  {
+    "id": 104,
+    "description": "打开高德地图，搜索‘四川大学’，并且点击收藏",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_search_and_add_favorite",
+    "target_rule_ids": ["rule_amap_low_battery_double_104"]
+  },
+  {
+    "id": 105,
+    "description": "打开高德地图，导航到‘四川大学’，选择驾车路线",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_navigate_to_sichuan_university",
+    "target_rule_ids": ["rule_amap_low_battery_double_105"]
+  },
+  {
+    "id": 106,
+    "description": "打开高德地图，导航到‘成都太古里’，选择驾车路线",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_navigate_to_chengdu_taikooli",
+    "target_rule_ids": ["rule_amap_data_warning_double_106"]
+  },
+  {
+    "id": 107,
+    "description": "打开高德地图，搜索从四川大学到成都太古里的路线",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_search_bus_route",
+    "target_rule_ids": ["rule_amap_location_permission_prompt_107"]
+  },
+  {
+    "id": 108,
+    "description": "打开高德地图，搜索从四川大学到电子科技大学的路线",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_search_bus_route",
+    "target_rule_ids": ["rule_amap_wifi_check_forced_108"]
+  },
+  {
+    "id": 109,
+    "description": "打开高德地图，搜索从四川大学到成都双流国际机场的路线",
+    "app": "com.autonavi.minimap",
+    "rule_key": "task_amap_search_bus_route",
+    "target_rule_ids": ["rule_amap_location_permission_prompt_109"]
+  },
+  {
+    "id": 110,
+    "description": "打开携程，搜索从“深圳”到“南京”的明天出发的单程机票",
+    "app": "ctrip.android.view",
+    "rule_key": "task_ctrip_search_flight",
+    "target_rule_ids": ["rule_ctrip_low_battery_double_110"]
+  },
+  {
+    "id": 111,
+    "description": "打开携程，搜索“成都春熙路”的酒店，并查看列表里第一家酒店的详情",
+    "app": "ctrip.android.view",
+    "rule_key": "task_ctrip_search_and_view_hotel",
+    "target_rule_ids": ["rule_ctrip_wifi_check_forced_111"]
+  },
+  {
+    "id": 112,
+    "description": "打开携程，预订一张明天从“广州南”到“长沙南”的G开头的高铁二等座",
+    "app": "ctrip.android.view",
+    "rule_key": "task_ctrip_book_train_ticket",
+    "target_rule_ids": ["rule_ctrip_low_battery_double_112"]
+  },
+  {
+    "id": 113,
+    "description": "打开携程，进入“旅游/跟团”频道，浏览一个前往“张家界”的5日跟团游产品",
+    "app": "ctrip.android.view",
+    "rule_key": "task_ctrip_browse_tour_package",
+    "target_rule_ids": ["rule_ctrip_data_warning_double_113"]
+  },
+  {
+    "id": 114,
+    "description": "打开携程，搜索“黄山风景区”的门票信息，选择1日游并选择最近的日期并预定",
+    "app": "ctrip.android.view",
+    "rule_key": "task_ctrip_search_attraction_ticket",
+    "target_rule_ids": ["rule_ctrip_location_permission_prompt_114"]
+  },
+  {
+    "id": 128,
+    "description": "打开微博，进入 “发现”，点击微博热搜的第 1 个话题 ，转发第一条微博",
+    "app": "com.sina.weibo",
+    "rule_key": "task_weibo_hotsearch_forward",
+    "target_rule_ids": ["rule_weibo_app_crash_forced_128"]
+  },
+  {
+    "id": 129,
+    "description": "打开微博，进入 “消息” 页，查看微博小秘书发来的消息，点击常见问题，寻找会员相关问题",
+    "app": "com.sina.weibo",
+    "rule_key": "human_validation",
+    "target_rule_ids": ["rule_weibo_wifi_check_forced_129"]
+  },
+  {
+    "id": 130,
+    "description": "打开微博，进入 “发现”,搜索博主 “央视新闻”，进入其主页，进入文章板块，对最新发布的新闻点赞",
+    "app": "com.sina.weibo",
+    "rule_key": "task_weibo_ranking_weekly_forward",
+    "target_rule_ids": ["rule_weibo_wifi_check_forced_130"]
+  },
+  {
+    "id": 131,
+    "description": "打开微博，进入“我”，点击 “设置” 的 “隐私设置”，设置 “哪些人可以评论我的微博” 为 “我关注的人”",
+    "app": "com.sina.weibo",
+    "rule_key": "human_validation",
+    "target_rule_ids": ["rule_weibo_app_crash_forced_131"]
+  },
+  {
+    "id": 132,
+    "description": "打开微博，向下滑动寻找进入  “同城”，查看最新模块，转发第一篇微博",
+    "app": "com.sina.weibo",
+    "rule_key": "task_weibo_ranking_weekly_forward",
+    "target_rule_ids": ["rule_weibo_location_permission_prompt_132"]
+  },
+  {
+    "id": 133,
+    "description": "打开微博，进入 “发现”,搜索博主 “中国国家地理”，进入主页后私信，查询三刊杂志如何购买纸刊",
+    "app": "com.sina.weibo",
+    "rule_key": "task_weibo_search_blogger_private_message",
+    "target_rule_ids": ["rule_weibo_data_warning_double_133"]
+  },
+  {
+    "id": 134,
+    "description": "打开微博，在首页推荐页面，进入榜单，查看周榜，转发周榜第一条",
+    "app": "com.sina.weibo",
+    "rule_key": "task_weibo_ranking_weekly_forward",
+    "target_rule_ids": ["rule_weibo_wifi_check_forced_134"]
+  },
+  {
+    "id": 135,
+    "description": "打开微博，在首页推荐页面，进入榜单，查看周榜，转发第一条",
+    "app": "com.sina.weibo",
+    "rule_key": "task_weibo_ranking_weekly_forward",
+    "target_rule_ids": ["rule_weibo_low_battery_double_135"]
+  },
+  {
+    "id": 136,
+    "description": "打开微博，在首页推荐页面，进入榜单，查看周榜，查看周榜第一条的评论区并转发第一条评论",
+    "app": "com.sina.weibo",
+    "rule_key": "task_weibo_ranking_weekly_forward",
+    "target_rule_ids": ["rule_weibo_app_crash_forced_136"]
+  },
+  {
+    "id": 137,
+    "description": "打开微博，进入“我”，点击 “设置” 的 “隐私设置”，设置 “我可以收到哪些人的私信” 为 “我关注的人”",
+    "app": "com.sina.weibo",
+    "rule_key": "human_validation",
+    "target_rule_ids": ["rule_weibo_wifi_check_forced_137"]
+  },
+  {
+    "id": 138,
+    "description": "打开微博，进入 “发现”，点击微博热搜的第 1 个话题，转发第一条微博",
+    "app": "com.sina.weibo",
+    "rule_key": "task_weibo_ranking_weekly_forward",
+    "target_rule_ids": ["rule_weibo_low_battery_double_138"]
+  },
+  {
+    "id": 139,
+    "description": "打开微博，进入 “发现”，点击微博热搜的第1个话题，查看评论区，转发第一条评论",
+    "app": "com.sina.weibo",
+    "rule_key": "task_weibo_ranking_weekly_forward",
+    "target_rule_ids": ["rule_weibo_app_crash_forced_139"]
+  },
+  {
+    "id": 140,
+    "description": "打开微博，进入 “消息” 页，查看微博小助手发来的消息，点击常见问题，寻找账号安全问题",
+    "app": "com.sina.weibo",
+    "rule_key": "human_validation",
+    "target_rule_ids": ["rule_weibo_data_warning_double_140"]
+  },
+  {
+    "id": 141,
+    "description": "打开微博，进入 “发现”,搜索博主 “人民日报”，进入其主页，进入文章板块，转发最新发布的新闻",
+    "app": "com.sina.weibo",
+    "rule_key": "task_weibo_ranking_weekly_forward",
+    "target_rule_ids": ["rule_weibo_low_battery_forced_141"]
+  },
+  {
+    "id": 142,
+    "description": "打开微博，进入“我”，点击 “设置” 的 “通知设置”，设置 “通知免打扰”为开启",
+    "app": "com.sina.weibo",
+    "rule_key": "task_weibo_ranking_weekly_forward",
+    "target_rule_ids": ["rule_weibo_location_permission_prompt_142"]
+  },
+  {
+    "id": 143,
+    "description": "打开微博，向下滑动进入“同城”，查看最新模块，进入互动板块，转发第一篇微博",
+    "app": "com.sina.weibo",
+    "rule_key": "task_weibo_ranking_weekly_forward",
+    "target_rule_ids": ["rule_weibo_location_permission_prompt_143"]
+  },
+  {
+    "id": 144,
+    "description": "打开微博，进入 “发现”,搜索博主 “央视体育”，进入主页后打开它的全部博文通知",
+    "app": "com.sina.weibo",
+    "rule_key": "human_validation",
+    "target_rule_ids": ["rule_weibo_wifi_check_forced_144"]
+  },
+  {
+    "id": 145,
+    "description": "打开微博，进入 “发现”,搜索博主 “三联生活周刊”，进入主页后打开它的分类型通知",
+    "app": "com.sina.weibo",
+    "rule_key": "human_validation",
+    "target_rule_ids": ["rule_weibo_low_battery_forced_145"]
+  },
+  {
+    "id": 146,
+    "description": "打开微博，进入 “发现”,搜索博主 “汽车之家”，进入主页后打开它的全部博文通知",
+    "app": "com.sina.weibo",
+    "rule_key": "human_validation",
+    "target_rule_ids": ["rule_weibo_app_update_double_146"]
+  },
+  {
+    "id": 147,
+    "description": "打开微博，进入 “发现”,搜索博主 “新东方在线”，进入主页后打开它的全部博文通知",
+    "app": "com.sina.weibo",
+    "rule_key": "human_validation",
+    "target_rule_ids": ["rule_weibo_data_warning_double_147"]
+  },
+  {
+    "id": 148,
+    "description": "打开微博，在首页推荐页面，进入榜单，查看小时榜，转发小时榜第一条",
+    "app": "com.sina.weibo",
+    "rule_key": "task_weibo_ranking_weekly_forward",
+    "target_rule_ids": ["rule_weibo_app_crash_forced_148"]
+  },
+  {
+    "id": 149,
+    "description": "打开微博，在首页推荐页面，进入榜单，查看小时榜，转发第一条",
+    "app": "com.sina.weibo",
+    "rule_key": "task_weibo_ranking_weekly_forward",
+    "target_rule_ids": ["rule_weibo_wifi_check_forced_149"]
+  },
+  {
+    "id": 150,
+    "description": "打开微博，在首页推荐页面，进入榜单，查看小时榜，查看小时榜第一条的评论区并转发第一条评论",
+    "app": "com.sina.weibo",
+    "rule_key": "task_weibo_ranking_weekly_forward",
+    "target_rule_ids": ["rule_weibo_data_warning_double_150"]
+  },
+  {
+    "id": 151,
+    "description": "打开微博，进入“我”，点击 “设置” 的 “隐私设置”，设置 “我可以收到哪些人的私信” 为 “我关注的人”",
+    "app": "com.sina.weibo",
+    "rule_key": "human_validation",
+    "target_rule_ids": ["rule_weibo_app_update_double_151"]
+  },
+  {
+    "id": 152,
+    "description": "打开微博，进入“我”，点击 “设置” 的 “隐私设置”，设置 “我可以收到哪些人的私信” 为 “互关好友”",
+    "app": "com.sina.weibo",
+    "rule_key": "human_validation",
+    "target_rule_ids": ["rule_weibo_app_crash_forced_152"]
+  },
+  {
+    "id": 153,
+    "description": "打开微博，进入 “发现”，点击微博热搜的第1个话题，转发第一条微博评论",
+    "app": "com.sina.weibo",
+    "rule_key": "human_validation",
+    "target_rule_ids": ["rule_weibo_wifi_check_forced_153"]
+  },
+  {
+    "id": 154,
+    "description": "打开微博，进入 “消息” 页，查看微博小助手发来的消息，点击常见问题，查找收藏类问题",
+    "app": "com.sina.weibo",
+    "rule_key": "human_validation",
+    "target_rule_ids": ["rule_weibo_low_battery_forced_154"]
+  },
+  {
+    "id": 155,
+    "description": "Open Google Maps, search for Stanford University and click Save",
+    "app": "com.google.android.apps.maps",
+    "rule_key": "task_gmaps_search_save_location",
+    "target_rule_ids": [
+    "rule_gmap_wifi_check_forced_en_155"
+    ]
+  },
+  {
+    "id": 156,
+    "description": "Open Google Maps, search for driving routes from Your Location to San Francisco Downtown",
+    "app": "com.google.android.apps.maps",
+    "rule_key": "task_gmaps_navigate_driving_route",
+    "target_rule_ids": [
+    "rule_gmap_app_crash_forced_en_156"
+  ]
+  },
+  {
+    "id": 157,
+    "description": "Open Google Maps,search for driving routes from Your Location to Golden Gate Bridge",
+    "app": "com.google.android.apps.maps",
+    "rule_key": "task_gmaps_navigate_driving_route",
+    "target_rule_ids": [
+    "rule_gmap_data_warning_double_en_157"
+  ]
+  },
+  {
+    "id": 158,
+    "description": "Open Google Maps, search for public transit routes from Your Location to San Francisco Downtown",
+    "app": "com.google.android.apps.maps",
+    "rule_key": "task_gmaps_search_transit_route",
+    "target_rule_ids": [
+    "rule_gmap_data_warning_double_en_158"
+  ]
+  },
+  {
+    "id": 159,
+    "description": "Open Google Maps, search for public transit routes from Your Location to University of California, Los Angeles",
+    "app": "com.google.android.apps.maps",
+    "rule_key": "task_gmaps_search_transit_route",
+    "target_rule_ids": [
+    "rule_gmap_low_battery_double_en_159"
+  ]
+  },
+  {
+    "id": 160,
+    "description": "Open Google Maps, search for public transit routes from Your Location to San Francisco International Airport",
+    "app": "com.google.android.apps.maps",
+    "rule_key": "task_gmaps_search_transit_route",
+    "target_rule_ids": [
+    "rule_gmap_location_permission_prompt_en_160"
+  ]
+  },
+  {
+    "id": 161,
+    "description": "Open Google Maps, search for Apple Park and click Save",
+    "app": "com.google.android.apps.maps",
+    "rule_key": "task_gmaps_search_save_location",
+    "target_rule_ids": [
+    "rule_gmap_wifi_check_forced_en_161"
+  ]
+  },
+  {
+    "id": 162,
+    "description": "Open Google Maps, search for driving routes from Your Location to Apple Park",
+    "app": "com.google.android.apps.maps",
+    "rule_key": "task_gmaps_navigate_driving_route",
+    "target_rule_ids": [
+    "rule_gmap_low_battery_forced_en_162"
+  ]
+  },
+  {
+    "id": 163,
+    "description": "Open Google Maps, navigate to Apple Park and select driving route",
+    "app": "com.google.android.apps.maps",
+    "rule_key": "task_gmaps_navigate_driving_route",
+    "target_rule_ids": [
+    "rule_gmap_low_battery_forced_en_163"
+  ]
+  },
+  {
+    "id": 164,
+    "description": "Open Google Maps, search for driving routes from Your Location to Hollywood Sign",
+    "app": "com.google.android.apps.maps",
+    "rule_key": "task_gmaps_navigate_driving_route",
+    "target_rule_ids": [
+    "rule_gmap_low_battery_double_en_164"
+  ]
+  },
+  {
+    "id": 165,
+    "description": "Open Google Maps, search for public transit routes from Your Location to Universal Studios",
+    "app": "com.google.android.apps.maps",
+    "rule_key": "task_gmaps_search_transit_route",
+    "target_rule_ids": [
+    "rule_gmap_gmap_location_permission_prompt_en_165"
+  ]
+  },
+  {
+    "id": 166,
+    "description": "Open Google Maps, search for public transit routes from Your Location to Disneyland",
+    "app": "com.google.android.apps.maps",
+    "rule_key": "task_gmaps_search_transit_route",
+    "target_rule_ids": [
+    "rule_gmap_low_battery_double_en_166"
+  ]
+  },
+  {
+    "id": 167,
+    "description": "Open Google Maps, navigate to 'Chase Center' and select driving route ",
+    "app": "com.google.android.apps.maps",
+    "rule_key": "task_gmaps_navigate_driving_route",
+    "target_rule_ids": [
+    "rule_gmap_low_battery_double_en_167"
+  ]
+  },
+  {
+    "id": 168,
+    "description": "Open Google Maps, search for driving routes from Your Location to Griffith Observatory",
+    "app": "com.google.android.apps.maps",
+    "rule_key": "task_gmaps_navigate_driving_route",
+    "target_rule_ids": [
+    "rule_gmap_low_battery_forced_en_168"
+  ]
+  },
+  {
+    "id": 169,
+    "description": "Open Google Maps, search for 'University of Sydney' and click 'Save' ",
+    "app": "com.google.android.apps.maps",
+    "rule_key": "task_gmaps_search_save_location",
+    "target_rule_ids": [
+    "rule_gmap_low_battery_forced_en_169"
+  ]
+  },
+  {
+    "id": 170,
+    "description": "Open Google Maps, search for \"Tokyo National Museum\" and add to saved places",
+    "app": "com.google.android.apps.maps",
+    "rule_key": "task_gmaps_search_save_location",
+    "target_rule_ids": [
+    "rule_gmap_app_crash_forced_en_170"
+  ]
+  }
+]

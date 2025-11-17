@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AdbSmartTest"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".LocationPermissionActivity"
+            android:theme="@style/Theme.App.Dialog.Obstacle"
+            android:exported="true"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/Theme.App.Dialog.Obstacle"
+            android:exported="true"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name=".LowBatteryActivity"
+            android:theme="@style/Theme.App.Dialog.Obstacle"
+            android:exported="true"
+            android:launchMode="singleTop"/>
+
+        <activity
+            android:name=".TargetPageActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".RedirectActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <activity android:name=".CookieConsentActivity"
+            android:exported="true"
+            android:theme="@style/Theme.App.Dialog.Obstacle" />
+        <activity
+            android:name=".ProgressActivity"
+            android:theme="@style/Theme.App.Dialog.Obstacle"
+            android:exported="true"
+            android:launchMode="singleTop"/>
+        <activity
+            android:name=".MockAdActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MockAd.Transparent" />
+    </application>
+</manifest>

@@ -1,0 +1,4 @@
+<activity
+    android:name=".OverlayActivity"
+    android:exported="true"
+    android:theme="@style/Theme.Overlay.Transparent" />

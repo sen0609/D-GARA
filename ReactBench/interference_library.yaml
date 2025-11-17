@@ -1,0 +1,371 @@
+interference_library:
+  - id: data_warning_double
+    target_activity: "LocationPermissionActivity"
+    description: "通用场景：模拟一个双按钮的流量提醒。"
+    params:
+      param_title: "流量提醒"
+      param_message: "您正在使用移动数据网络，继续操作可能会产生较高流量费用。"
+      param_allow_btn_text: "查看网络"
+      param_deny_btn_text: "继续使用"
+      param_allow_log_event: "GENERAL_DATA_GOTO_WIFI"
+      param_deny_log_event: "GENERAL_DATA_CONTINUE"
+    post_actions:
+      EVENT:GENERAL_DATA_GOTO_WIFI:
+        - type: adb
+          command: 'am start -a android.settings.WIFI_SETTINGS'
+          description: "跳转到系统的WLAN设置页面"
+      EVENT:GENERAL_DATA_CONTINUE:
+        - type: log
+          message: "success to continue"
+
+  - id: wifi_check_forced
+    target_activity: "LowBatteryActivity"
+    description: "提示用户检查Wi-Fi连接。"
+    params:
+      param_title: "检查Wi-Fi连接"
+      param_message: "为了更流畅的使用体验，请确保您已连接到稳定的Wi-Fi网络。"
+      param_button_text: "去检查"
+      param_log_event: "WIFI_CHECK_INITIATED"
+    post_actions:
+      EVENT:WIFI_CHECK_INITIATED:
+        - type: adb
+          command: 'am start -a android.settings.WIFI_SETTINGS'
+          description: "跳转到系统的WLAN设置页面"
+  
+  - id: low_battery_forced
+    target_activity: "LowBatteryActivity"
+    description: "系统级场景：模拟低电量提示"
+    params:
+      param_title: "低电量"
+      param_message: "电池电量严重不足，部分功能可能受限。需要立刻前往电池设置以开启省电模式？"
+      param_button_text: "前往设置"
+      param_log_event: "SYSTEM_BATTERY_GOTO_SETTINGS"
+    post_actions:
+      EVENT:SYSTEM_BATTERY_GOTO_SETTINGS:
+        - type: adb
+          command: 'am start -a android.settings.BATTERY_SAVER_SETTINGS'
+          description: "跳转到电池与省电设置页面"
+
+  - id: app_update_double
+    target_activity: "LocationPermissionActivity"
+    description: "通用场景：提示用户有新版本可供更新。"
+    params:
+      param_title: "发现新版本 9.0.1"
+      param_message: "【重磅更新】\n1. 全新UI设计，体验更流畅！\n2. 新增智能推荐，精彩内容看不停。\n3. 修复了多个已知问题。"
+      param_allow_btn_text: "立即更新"
+      param_deny_btn_text: "下次再说"
+      param_allow_log_event: "GENERAL_UPDATE_ACCEPTED"
+      param_deny_log_event: "GENERAL_UPDATE_DEFERRED"
+    post_actions:
+      EVENT:GENERAL_UPDATE_ACCEPTED: 
+        - type: adb
+          command: 'am start -n com.example.adbsmarttest/.ProgressActivity --ei "param_duration_seconds" 15'
+          description: "启动模拟更新进度条页面"
+      EVENT:GENERAL_UPDATE_DEFERRED:
+        - type: log
+          message: "success to continue"
+
+  - id: low_battery_double
+    target_activity: "LocationPermissionActivity"
+    description: "系统级场景：模拟一个双按钮的低电量提醒。"
+    params:
+      param_title: "电量不足"
+      param_message: "电池电量严重不足，部分功能可能受限。需要立刻前往电池设置以开启省电模式？"
+      param_allow_btn_text: "前往设置"
+      param_deny_btn_text: "忽略"
+      param_allow_log_event: "SYSTEM_BATTERY_GOTO_SETTINGS"
+      param_deny_log_event: "SYSTEM_BATTERY_IGNORE"
+    post_actions:
+      EVENT:SYSTEM_BATTERY_GOTO_SETTINGS: 
+        - type: adb
+          command: 'am start -a android.settings.BATTERY_SAVER_SETTINGS'
+          description: "跳转到电池与省电设置页面"
+      EVENT:SYSTEM_BATTERY_IGNORE:
+        - type: log
+          message: "用户选择忽略低电量提示，继续使用应用"
+
+  - id: bili_rate_app_double
+    target_activity: "LocationPermissionActivity"
+    description: "B站场景：邀请用户去应用商店评分。"
+    params:
+      param_title: "喜欢哔哩哔哩吗？"
+      param_message: "你的鼓励是我们前进的动力，去给我们一个好评吧！"
+      param_allow_btn_text: "去评分"
+      param_deny_btn_text: "残忍拒绝"
+      param_allow_log_event: "BILI_RATE_APP_ACCEPTED"
+      param_deny_log_event: "BILI_RATE_APP_REJECTED"
+    post_actions:
+      EVENT:BILI_RATE_APP_ACCEPTED:
+        - type: adb
+          command: "am start -a android.intent.action.VIEW -d 'market://details?id=tv.danmaku.bili'; sleep 1; input swipe 500 2300 500 50 450"
+          description: "跳转至应用商城B站评分页面"
+      EVENT:BILI_RATE_APP_REJECTED:
+        - type: log
+          message: "success to continue"
+  
+  - id: bili_youth_mode_forced
+    target_activity: "LowBatteryActivity"
+    description: "B站场景：模拟青少年模式提示"
+    params:
+      param_title: "青少年模式"
+      param_message: "为呵护青少年健康成长，我们准备了青少年模式，是否立即开启？"
+      param_button_text: "开启青少年模式"
+      param_log_event: "BILI_YOUTH_MODE_ACCEPTED"
+    post_actions:
+      EVENT:BILI_YOUTH_MODE_ACCEPTED:
+        - type: adb
+          command: 'am start -n tv.danmaku.bili/com.bilibili.teenagersmode.ui.TeenagersModeActivity'
+          description: "跳转到模拟的未成年守护设置页面"
+
+
+  - id: jd_app_crash_forced
+    target_activity: "LowBatteryActivity"
+    description: "京东场景：模拟一个应用闪退后出现的提示弹窗。"
+    params:
+      param_title: "应用崩溃"
+      param_message: "应用已崩溃，是否重启应用？"
+      param_button_text: "重启应用"
+      param_log_event: "JD_APP_CRASH_RESTART"
+    post_actions:
+      EVENT:JD_APP_CRASH_RESTART:
+        - type: adb
+          command: 'am force-stop com.jingdong.app.mall'
+          description: "重启应用"
+  
+  - id: data_warning_double_en
+    target_activity: "LocationPermissionActivity"
+    description: "General Scene: Simulates a dual-button data usage warning."
+    params:
+      param_title: "Data Usage Warning"
+      param_message: "You are using a mobile data network. Continuing may result in high data charges."
+      param_allow_btn_text: "Check Network"
+      param_deny_btn_text: "Continue"
+      param_allow_log_event: "GENERAL_DATA_GOTO_WIFI"
+      param_deny_log_event: "GENERAL_DATA_CONTINUE"
+    post_actions:
+      EVENT:GENERAL_DATA_GOTO_WIFI:
+        - type: adb
+          command: 'am start -a android.settings.WIFI_SETTINGS'
+          description: "Opens the system's Wi-Fi settings page"
+      EVENT:GENERAL_DATA_CONTINUE:
+        - type: log
+          message: "success to continue"
+
+  - id: wifi_check_forced_en
+    target_activity: "LowBatteryActivity"
+    description: "Prompts the user to check their Wi-Fi connection."
+    params:
+      param_title: "Check Wi-Fi Connection"
+      param_message: "For a smoother experience, please ensure you are connected to a stable Wi-Fi network."
+      param_button_text: "Check Now"
+      param_log_event: "WIFI_CHECK_INITIATED"
+    post_actions:
+      EVENT:WIFI_CHECK_INITIATED:
+        - type: adb
+          command: 'am start -a android.settings.WIFI_SETTINGS'
+          description: "Opens the system's Wi-Fi settings page"
+  
+  - id: low_battery_forced_en
+    target_activity: "LowBatteryActivity"
+    description: "System Scene: Simulates a low battery warning."
+    params:
+      param_title: "Low Battery"
+      param_message: "Battery level is critically low. Some features may be limited. Go to settings to enable Battery Saver mode?"
+      param_button_text: "Go to Settings"
+      param_log_event: "SYSTEM_BATTERY_GOTO_SETTINGS"
+    post_actions:
+      EVENT:SYSTEM_BATTERY_GOTO_SETTINGS:
+        - type: adb
+          command: 'am start -a android.settings.BATTERY_SAVER_SETTINGS'
+          description: "Opens the battery saver settings page"
+
+  - id: app_update_double_en
+    target_activity: "LocationPermissionActivity"
+    description: "General Scene: Prompts the user about a new available update."
+    params:
+      param_title: "New Version Available: 9.0.1"
+      param_message: "[Major Update]\n1. All-new UI design for a smoother experience!\n2. Added smart recommendations for endless content.\n3. Fixed several known issues."
+      param_allow_btn_text: "Update Now"
+      param_deny_btn_text: "Later"
+      param_allow_log_event: "GENERAL_UPDATE_ACCEPTED"
+      param_deny_log_event: "GENERAL_UPDATE_DEFERRED"
+    post_actions:
+      EVENT:GENERAL_UPDATE_ACCEPTED: 
+        - type: adb
+          command: 'am start -n com.example.adbsmarttest/.ProgressActivity --ei "param_duration_seconds" 15'
+          description: "Starts the simulated update progress bar page"
+      EVENT:GENERAL_UPDATE_DEFERRED:
+        - type: log
+          message: "success to continue"
+
+  - id: low_battery_double_en
+    target_activity: "LocationPermissionActivity"
+    description: "System Scene: Simulates a dual-button low battery warning."
+    params:
+      param_title: "Battery Low"
+      param_message: "Battery level is critically low. Some features may be limited. Go to settings to enable Battery Saver mode?"
+      param_allow_btn_text: "Go to Settings"
+      param_deny_btn_text: "Ignore"
+      param_allow_log_event: "SYSTEM_BATTERY_GOTO_SETTINGS"
+      param_deny_log_event: "SYSTEM_BATTERY_IGNORE"
+    post_actions:
+      EVENT:SYSTEM_BATTERY_GOTO_SETTINGS: 
+        - type: adb
+          command: 'am start -a android.settings.BATTERY_SAVER_SETTINGS'
+          description: "Opens the battery saver settings page"
+      EVENT:SYSTEM_BATTERY_IGNORE:
+        - type: log
+          message: "User chose to ignore the low battery warning and continue using the app"
+
+  - id: amazon_rate_app_double_en
+    target_activity: "LocationPermissionActivity"
+    description: "亚马逊场景：邀请用户去应用商店为Amazon Shopping评分。"
+    params:
+      param_title: "喜欢在亚马逊购物吗？"
+      param_message: "您的评价能帮助我们提供更好的服务。请为我们评分！"
+      param_allow_btn_text: "去评分"
+      param_deny_btn_text: "以后再说"
+      param_allow_log_event: "AMAZON_RATE_APP_ACCEPTED"
+      param_deny_log_event: "AMAZON_RATE_APP_REJECTED"
+    post_actions:
+      EVENT:AMAZON_RATE_APP_ACCEPTED:
+        - type: adb
+          command: "am start -a android.intent.action.VIEW -d 'market://details?id=com.amazon.mShop.android.shopping' -p com.android.vending; sleep 1; input swipe 500 2300 500 50 450"
+          description: "跳转至Google Play商店的Amazon Shopping评分页面"
+      EVENT:AMAZON_RATE_APP_REJECTED:
+        - type: log
+          message: "success to continue"
+
+  - id: bilibili_premium_membership_prompt
+    target_activity: "LocationPermissionActivity"
+    description: "B站场景：开通大会员提示。"
+    params:
+      param_title: "大会员专享"
+      param_message: "该视频为大会员专享内容，开通后即可观看高清全片。"
+      param_allow_btn_text: "立即开通"
+      param_deny_btn_text: "返回"
+      param_allow_log_event: "BILI_PREMIUM_ACCEPTED"
+      param_deny_log_event: "BILI_PREMIUM_REJECTED"
+    post_actions:
+      EVENT:BILI_PREMIUM_ACCEPTED:
+        - type: adb
+          command: 'am start -n "tv.danmaku.bili/com.bilibili.vip.web.VipWebActivity" --es "uri" "https://big.bilibili.com/mobile/index"'
+          description: "跳转至B站会员中心"
+      EVENT:BILI_PREMIUM_REJECTED:
+        - type: adb
+          command: "input keyevent 4"
+          description: "模拟按下返回键退出当前页面"
+
+  - id: jd_logistics_notification_permission_prompt
+    target_activity: "LocationPermissionActivity"
+    description: "京东场景：请求物流通知权限"
+    params:
+      param_title: "开启物流通知"
+      param_message: "开启通知以便我们实时为您推送订单的物流状态。"
+      param_allow_btn_text: "去开启"
+      param_deny_btn_text: "不需要"
+      param_allow_log_event: "JD_LOGISTICS_PERM_ACCEPTED"
+      param_deny_log_event: "JD_LOGISTICS_PERM_REJECTED"
+    post_actions:
+      EVENT:JD_LOGISTICS_PERM_ACCEPTED:
+        - type: adb
+          command: 'am start -a android.settings.APPLICATION_DETAILS_SETTINGS -d "package:com.jingdong.app.mall"'
+          description: "跳转到系统设置页面"
+      EVENT:JD_LOGISTICS_PERM_REJECTED:
+        - type: log
+          message: "用户拒绝了物流通知权限请求，继续使用应用"
+
+  - id: amap_location_permission_prompt
+    target_activity: "LocationPermissionActivity"
+    description: "高德场景：请求定位权限"
+    params:
+      param_title: "高德地图需要定位权限"
+      param_message: "为了给您提供精准的定位和导航服务，请授予我们定位权限。"
+      param_allow_btn_text: "去授权"
+      param_deny_btn_text: "退出"
+      param_allow_log_event: "AUTONAVI_LOCATION_PERM_ACCEPTED"
+      param_deny_log_event: "AUTONAVI_LOCATION_PERM_REJECTED"
+    post_actions:
+      EVENT:AUTONAVI_LOCATION_PERM_ACCEPTED:
+        - type: adb
+          command: "am start -a android.settings.APPLICATION_DETAILS_SETTINGS -d 'package:com.autonavi.minimap'"
+          description: "跳转到高德地图的系统设置页面"
+      EVENT:AUTONAVI_LOCATION_PERM_REJECTED:
+        - type: adb
+          command: "am force-stop com.autonavi.minimap"
+          description: "模拟退出应用"
+
+  - id: ctrip_location_permission_prompt
+    target_activity: "LocationPermissionActivity"
+    description: "携程场景：请求定位权限"
+    params:
+      param_title: "携程需要定位权限"
+      param_message: "为了给您提供精准的定位和导航服务，请授予我们定位权限。"
+      param_allow_btn_text: "去授权"
+      param_deny_btn_text: "退出"
+      param_allow_log_event: "CTRIP_LOCATION_PERM_ACCEPTED"
+      param_deny_log_event: "CTRIP_LOCATION_PERM_REJECTED"
+    post_actions:
+      EVENT:CTRIP_LOCATION_PERM_ACCEPTED:
+        - type: adb
+          command: "am start -a android.settings.APPLICATION_DETAILS_SETTINGS -d package:ctrip.android.view"
+          description: "跳转到携程的系统设置页面"
+      EVENT:CTRIP_LOCATION_PERM_REJECTED:
+        - type: adb
+          command: "am force-stop com.ctrip"
+          description: "模拟退出应用"
+
+  - id: weibo_location_permission_prompt
+    target_activity: "LocationPermissionActivity"
+    description: "微博场景：请求定位权限"
+    params:
+      param_title: "微博需要定位权限"
+      param_message: "为了给您提供精准的定位服务，请授予我们定位权限。"
+      param_allow_btn_text: "去授权"
+      param_deny_btn_text: "退出"
+      param_allow_log_event: "WEIBO_LOCATION_PERM_ACCEPTED"
+      param_deny_log_event: "WEIBO_LOCATION_PERM_REJECTED"
+    post_actions:
+      EVENT:WEIBO_LOCATION_PERM_ACCEPTED:
+        - type: adb
+          command: "am start -a android.settings.APPLICATION_DETAILS_SETTINGS -d package:com.sina.weibo"
+          description: "跳转到微博的系统设置页面"
+      EVENT:WEIBO_LOCATION_PERM_REJECTED:
+        - type: adb
+          command: "am force-stop com.autonavi.minimap"
+          description: "模拟退出应用"
+
+
+  - id: gmap_location_permission_prompt
+    target_activity: "LocationPermissionActivity"
+    description: "谷歌地图场景：请求定位权限"
+    params:
+      param_title: "谷歌地图需要定位权限"
+      param_message: "为了给您提供精准的定位服务，请授予我们定位权限。"
+      param_allow_btn_text: "去授权"
+      param_deny_btn_text: "退出"
+      param_allow_log_event: "GMAP_LOCATION_PERM_ACCEPTED"
+      param_deny_log_event: "GMAP_LOCATION_PERM_REJECTED"
+    post_actions:
+      EVENT:GMAP_LOCATION_PERM_ACCEPTED:
+        - type: adb
+          command: "am start -a android.settings.APPLICATION_DETAILS_SETTINGS -d 'package:com.google.android.apps.maps'"
+          description: "跳转到谷歌地图的系统设置页面"
+      EVENT:GMAP_LOCATION_PERM_REJECTED:
+        - type: adb
+          command: "am force-stop com.google.android.apps.maps"
+          description: "模拟退出应用"
+
+  - id: weibo_app_crash_forced
+    target_activity: "LowBatteryActivity"
+    description: "微博场景：模拟一个应用闪退后出现的提示弹窗。"
+    params:
+      param_title: "应用崩溃"
+      param_message: "应用已崩溃，是否重启应用？"
+      param_button_text: "重启应用"
+      param_log_event: "WEIBO_APP_CRASH_RESTART"
+    post_actions:
+      EVENT:WEIBO_APP_CRASH_RESTART:
+        - type: adb
+          command: 'am force-stop com.sina.weibo'
+          description: "重启应用"

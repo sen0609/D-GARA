@@ -1,0 +1,559 @@
+# success_conditions.yaml
+
+task_bili_search_and_like_video:
+  description: "Unified validation of Bilibili video like status (compatible with landscape and portrait)"
+  conditions:
+  # Top-level condition: any_of (satisfy any of the following)
+    - type: any_of
+      sub_conditions:
+        
+  # Case A: Like success status for landscape long video
+        - type: element_property_contains
+          selector: "resource-id='tv.danmaku.bili:id/frame_like'"
+          attribute: "content-desc"
+          value: "已点赞"
+          
+  # Case B: Like success status for portrait short video
+        - type: element_property
+          selector: "resource-id='tv.danmaku.bili:id/like_icon'"
+          attribute: "selected"
+          value: "true"
+
+task_bili_search_and_collect_video:
+  description: "Unified validation of Bilibili video favorite status (compatible with landscape and portrait)"
+  conditions:
+    - type: any_of
+      sub_conditions:
+        
+  # Case A: Favorite success status for landscape long video
+        - type: element_property_contains
+          selector: "resource-id='tv.danmaku.bili:id/frame_fav'"
+          attribute: "content-desc"
+          value: "已收藏"
+          
+  # Case B: Favorite success status for portrait short video
+        - type: element_property
+          selector: "resource-id='tv.danmaku.bili:id/favorite_icon'"
+          attribute: "selected"
+          value: "true"
+
+task_bili_search_and_coin_video:
+  description: "Unified validation of Bilibili video coin status (compatible with landscape and portrait), ignoring like side effects"
+  conditions:
+    - type: any_of
+      sub_conditions:
+        
+  # Case A: Coin success status for landscape long video
+        - type: element_property_contains
+          selector: "resource-id='tv.danmaku.bili:id/frame_coin'"
+          attribute: "content-desc"
+          value: "已投币"
+          
+  # Case B: Coin success status for portrait short video
+        - type: element_property
+          selector: "resource-id='tv.danmaku.bili:id/coin_icon'"
+          attribute: "selected"
+          value: "true"
+
+task_bili_switch_to_dynamics_tab:
+  description: "Switch to the 'Dynamic' tab at the bottom on the homepage and browse the dynamic list"
+  conditions:
+  # Condition 1: Verify the 'Dynamic' tab at the bottom is selected
+    - type: element_property
+      selector: "content-desc='动态,5之2,标签'"
+      attribute: "selected"
+      value: "true"
+      
+  # Condition 2: Verify the list view exists on the dynamic page to ensure content is loaded
+    - type: element_exists
+      selector: "resource-id='tv.danmaku.bili:id/dy_list'"
+
+task_jd_search_add_to_cart:
+  description: "General rule: Verify that after clicking 'Add to Cart' on JD product page, the success prompt appears"
+  conditions:
+  # Verify the prompt 'Added to cart successfully' exists
+    - type: element_exists
+      selector: "text='加入购物车成功'"
+
+task_jd_search_and_view_product:
+  description: "General rule: Verify that any JD product detail page is successfully entered"
+  conditions:
+  # Condition 1: Verify the 'Add to Cart' button exists
+    - type: element_exists
+      selector: "text='加入购物车'"
+      
+  # Condition 2: Verify the 'Buy Now' button exists
+    - type: element_exists
+      selector: "text='立即购买'"
+
+task_jd_search_and_share_product:
+  description: "General rule: Verify that after clicking share on JD, the share panel pops up successfully"
+  conditions:
+  # Condition 1: Verify the popup title 'Share to' exists
+    - type: element_exists
+      selector: "text='分享到'"
+      
+  # Condition 2: Verify the 'Cancel' button exists
+    - type: element_exists
+      selector: "text='取消'"
+
+
+task_jd_search_and_contact_customer_service:
+  description: "General rule: Verify that JD customer service chat is successfully entered and the specified message is sent"
+  conditions:
+  # Condition 1: Verify the 'Enter Shop' button exists at the top of the page to ensure on customer service chat page
+    - type: element_exists
+      selector: "content-desc='进店'"
+      
+  # Condition 2: Verify the sent message content exists in the chat history
+    - type: element_exists
+      selector: "text='什么时候可以发货'"
+
+task_jd_view_comments:
+  description: "General rule: Verify that the JD product review list page is successfully entered"
+  conditions:
+  # Condition 1: This condition is correct, keep unchanged
+    - type: element_text_equals
+      selector: "resource-id='com.jd.lib.productdetail.feature:id/cbh'"
+      text: "商品评价"
+      
+  # Condition 2: Verify a filter label containing 'All' exists on the page
+    - type: element_property_contains
+  # [Fix] Add a generic selector to tell the validator to check all TextViews
+      selector: "class='android.widget.TextView'"
+      attribute: "text"
+      value: "全部"
+
+task_amap_search_and_add_favorite:
+  description: "General rule: Verify that any location is successfully favorited in Amap"
+  conditions:
+  # Only verify the favorite button is in 'Favorited' state, regardless of the specific location
+    - type: element_exists
+      selector: "content-desc='收藏按钮已收藏'"
+
+task_amap_navigate_to_tongji_siping:
+  description: "Verify that a driving route to 'Tongji University Siping Campus' is successfully planned"
+  conditions:
+  # Condition 1: Verify the 'Start Navigation' button exists on the page
+    - type: element_exists
+      selector: "text='开始导航'"
+      
+  # Condition 2: Verify the 'Driving' tab is selected
+    - type: element_property
+      selector: "text='驾车'"
+      attribute: "selected"
+      value: "true"
+      
+  # Condition 3: Verify the destination is 'Tongji University (Siping Road Campus)'
+    - type: element_text_equals
+      selector: "resource-id='com.autonavi.minimap:id/route_edit_summary_end'"
+      text: "同济大学(四平路校区)"
+
+task_amap_navigate_to_tongji_jiading:
+  description: "Verify that a driving route to 'Tongji University Jiading Campus' is successfully planned"
+  conditions:
+  # Condition 1: Verify the 'Start Navigation' button exists on the page
+    - type: element_exists
+      selector: "text='开始导航'"
+      
+  # Condition 2: Verify the 'Driving' tab is selected
+    - type: element_property
+      selector: "text='驾车'"
+      attribute: "selected"
+      value: "true"
+      
+  # Condition 3: Verify the destination is 'Tongji University (Jiading Campus)'
+    - type: element_text_equals
+      selector: "resource-id='com.autonavi.minimap:id/route_edit_summary_end'"
+      text: "同济大学(嘉定校区)"
+
+task_amap_search_bus_route:
+  description: "General rule: Verify that any public transit route is successfully planned"
+  conditions:
+  # Condition 1: This condition is correct, keep unchanged
+    - type: element_property
+      selector: "text='公共交通'"
+      attribute: "selected"
+      value: "true"
+
+task_xhs_search_and_collect_note:
+  description: "General rule: Verify that the favorite button was successfully clicked on Xiaohongshu note page"
+  conditions:
+    - type: element_property_contains
+  # [Fix] Add a generic selector
+      selector: "class='android.widget.Button'"
+      attribute: "content-desc"
+      value: "已收藏"
+
+task_xhs_search_and_like_note:
+  description: "General rule: Verify that the like button was successfully clicked on Xiaohongshu note page"
+  conditions:
+    - type: element_property_contains
+  # [Fix] Add a generic selector
+      selector: "class='android.widget.Button'"
+      attribute: "content-desc"
+      value: "已点赞"
+
+task_xhs_browse_and_follow_author:
+  description: "General rule: Verify that the author was successfully followed on Xiaohongshu note page"
+  conditions:
+  # This rule itself is correct
+    - type: element_exists
+      selector: "text='已关注'"
+
+task_xhs_search_and_comment_on_note:
+  description: "General rule: Verify that the specified comment was successfully posted on Xiaohongshu note page"
+  conditions:
+    - type: element_property_contains
+  # [Fix] Add selector
+      selector: "class='android.widget.TextView'"
+      attribute: "text"
+      value: "条评论"
+    - type: element_property_contains
+  # [Fix] Add selector
+      selector: "class='android.widget.TextView'"
+      attribute: "text"
+      value: "感谢分享"
+
+task_ctrip_search_flight:
+  description: "General rule: Verify that any Ctrip flight search result list page is successfully entered"
+  conditions:
+  # Condition 1: Verify the placeholder for 'Departure City' exists at the top of the page
+    - type: element_exists
+      selector: "resource-id='列表页头部出发城市'"
+      
+  # Condition 2: Verify the 'Direct Flight First' button unique to the flight list page exists at the bottom
+    - type: element_exists
+      selector: "text='直飞优先'"
+      
+  # Condition 3: Verify at least one element in the list has a content description containing 'Flight'
+    - type: element_property_contains
+      selector: "class='android.view.ViewGroup'"
+      attribute: "content-desc"
+      value: "航班"
+
+task_ctrip_search_and_view_hotel:
+  description: "General rule: Verify that the Ctrip hotel detail page is successfully entered and room type information is visible"
+  conditions:
+  # This rule itself is correct
+    - type: element_exists
+      selector: "content-desc='房间'"
+    - type: element_exists
+      selector: "content-desc='查看房型'"
+
+task_ctrip_book_train_ticket:
+  description: "General rule: Verify that the Ctrip train ticket order fill page is successfully entered"
+  conditions:
+    - type: element_exists
+      selector: "text='填写订单'"
+    - type: element_property_contains
+  # [Fix] Add selector
+      selector: "class='android.widget.TextView'"
+      attribute: "text"
+      value: "添加乘客"
+    - type: element_exists
+      selector: "text='立即预订'"
+
+task_ctrip_browse_tour_package:
+  description: "General rule: Verify that the Ctrip group tour product detail page is successfully entered"
+  conditions:
+  # This rule itself is correct
+    - type: element_exists
+      selector: "text='收藏'"
+    - type: element_exists
+      selector: "text='问客服'"
+    - type: element_exists
+      selector: "text='下一步'"
+
+task_ctrip_search_attraction_ticket:
+  description: "Verify that the Ctrip attraction ticket package and date selection page is successfully entered"
+  conditions:
+    - type: element_exists
+      selector: "text='预订'"
+    - type: element_exists
+      selector: "text='周边'"
+      
+task_amazon_search_and_add_to_cart:
+  description: "General rule: Verify that after clicking 'Add to Cart' on Amazon product page, it is successful"
+  conditions:
+  # Verify the success prompt 'Added to your cart' exists
+    - type: element_exists
+      selector: "text='Added to your cart'"
+
+task_amazon_search_and_filter_by_brand:
+  description: "Lenient validation: Verify that 'laptop' is successfully searched on Amazon and the result list page is entered (cannot verify filter result due to WebView limitation)"
+  conditions:
+  # Condition 1: Verify the top search bar still displays our search term
+    - type: element_text_equals
+      selector: "resource-id='com.amazon.mShop.android.shopping:id/chrome_search_hint_view'"
+      text: "laptop"
+      
+  # Condition 2: Verify the WebView for displaying results exists
+    - type: element_exists
+      selector: "class='android.webkit.WebView'"
+
+task_amazon_view_cart_and_change_quantity:
+  description: "Verify that the product quantity in Amazon cart is successfully changed to 2"
+  conditions:
+  # Condition 1: Verify the page title is 'Shopping Cart' to ensure on the correct page
+    - type: element_exists
+      selector: "text='Shopping Cart'"
+      
+  # Condition 2: Verify the text 'Quantity is 2' exists on the page to confirm the quantity is changed
+    - type: element_exists
+      selector: "text='Quantity is 2'"
+    
+
+task_amazon_search_and_add_to_list:
+  description: "General rule: Verify that the product is successfully added to the List (wishlist) on Amazon product page"
+  conditions:
+  # Verify the 'Add to List' button state has changed to contain 'View List'
+    - type: element_property_contains
+      selector: "resource-id='wishlistButtonViewStack'"
+      attribute: "content-desc"
+      value: "View List"
+
+task_amazon_save_for_later:
+  description: "Verify that the product is successfully moved to the 'Save for later' area in Amazon cart"
+  conditions:
+  # Condition 1: This condition is correct, keep unchanged
+    - type: element_exists
+      selector: "text='Shopping Cart'"
+      
+  # Condition 2: Verify the new area title 'Saved for later' has appeared
+    - type: element_property_contains
+  # [Fix] Add a generic selector to tell the validator to check all TextViews
+      selector: "class='android.widget.TextView'"
+      attribute: "text"
+      value: "Saved for later"
+task_facebook_like_post:
+  description: "General rule: Verify that a post is successfully liked in the Facebook feed"
+  conditions:
+  # Verify a button with content description containing 'Like button, pressed' exists on the page
+    - type: element_property_contains
+      selector: "class='android.widget.Button'"
+      attribute: "content-desc"
+      value: "Like button, pressed"
+
+task_facebook_search_and_view_profile:
+  description: "General rule: Verify that the Facebook user profile is successfully entered and followed"
+  conditions:
+  # Condition 1: Verify the 'Posts' tab exists and is selected to confirm on the user profile
+    - type: element_property
+      selector: "text='帖子'"
+      attribute: "selected"
+      value: "true"
+      
+  # Condition 2: Verify the 'Followed' button exists to confirm the follow action was successful
+    - type: element_exists
+      selector: "text='已关注'"
+
+task_facebook_navigate_to_friends:
+  description: "Verify that the Facebook friend requests page is successfully entered"
+  conditions:
+  # Condition 1: Verify the 'Friend requests' button exists on the page
+    - type: element_exists
+      selector: "content-desc='Friend requests'"
+      
+  # Condition 2: Verify the 'Your friends' button exists on the page
+    - type: element_exists
+      selector: "content-desc='Your friends'"
+
+task_amap_navigate_to_sichuan_university:
+  description: "Verify that a driving route to 'Sichuan University' is successfully planned"
+  conditions:
+  # Condition 1: Verify the 'Start Navigation' button exists on the page
+    - type: element_exists
+      selector: "text='开始导航'"
+      
+  # Condition 2: Verify the 'Driving' tab is selected
+    - type: element_property
+      selector: "text='驾车'"
+      attribute: "selected"
+      value: "true"
+      
+  # Condition 3: Verify the destination is 'Sichuan University (Wangjiang Campus)'
+    - type: element_text_equals
+      selector: "resource-id='com.autonavi.minimap:id/route_edit_summary_end'"
+      text: "四川大学(望江校区)"
+
+task_amap_navigate_to_chengdu_taikooli:
+  description: "Verify that a driving route to 'Chengdu Taikoo Li' is successfully planned"
+  conditions:
+  # Condition 1: Verify the 'Start Navigation' button exists on the page
+    - type: element_exists
+      selector: "text='开始导航'"
+      
+  # Condition 2: Verify the 'Driving' tab is selected
+    - type: element_property
+      selector: "text='驾车'"
+      attribute: "selected"
+      value: "true"
+      
+  # Condition 3: Verify the destination is 'Chengdu Taikoo Li'
+    - type: element_text_equals
+      selector: "resource-id='com.autonavi.minimap:id/route_edit_summary_end'"
+      text: "成都太古里"
+
+task_amap_navigate_to_guangzhou_tower:
+  description: "Verify that a driving route to 'Guangzhou Tower' is successfully planned"
+  conditions:
+  # Condition 1: Verify the 'Start Navigation' button exists on the page
+    - type: element_exists
+      selector: "text='开始导航'"
+
+  # Condition 2: Verify the 'Driving' tab is selected
+    - type: element_property
+      selector: "text='驾车'"
+      attribute: "selected"
+      value: "true"
+
+  # Condition 3: Verify the destination is 'Guangzhou Tower'
+    - type: element_text_equals
+      selector: "resource-id='com.autonavi.minimap:id/route_edit_summary_end'"
+      text: "广州塔"
+
+task_amap_navigate_to_xujiahui:
+  description: "Verify that a driving route to 'Xujiahui' is successfully planned"
+  conditions:
+  # Condition 1: Verify the 'Start Navigation' button exists on the page
+    - type: element_exists
+      selector: "text='开始导航'"
+
+  # Condition 2: Verify the 'Driving' tab is selected
+    - type: element_property
+      selector: "text='驾车'"
+      attribute: "selected"
+      value: "true"
+
+  # Condition 3: Verify the destination is 'Xujiahui'
+    - type: element_text_equals
+      selector: "resource-id='com.autonavi.minimap:id/route_edit_summary_end'"
+      text: "徐家汇"
+
+task_amap_navigate_to_peking_university:
+  description: "Verify that a driving route to 'Peking University' is successfully planned"
+  conditions:
+  # Condition 1: Verify the 'Start Navigation' button exists on the page
+    - type: element_exists
+      selector: "text='开始导航'"
+
+  # Condition 2: Verify the 'Driving' tab is selected
+    - type: element_property
+      selector: "text='驾车'"
+      attribute: "selected"
+      value: "true"
+
+  # Condition 3: Verify the destination is 'Peking University'
+    - type: element_text_equals
+      selector: "resource-id='com.autonavi.minimap:id/route_edit_summary_end'"
+      text: "北京大学"
+
+
+task_amap_navigate_to_summer_palace:
+  description: "Verify that a driving route to 'Summer Palace' is successfully planned"
+  conditions:
+  # Condition 1: Verify the 'Start Navigation' button exists on the page
+    - type: element_exists
+      selector: "text='开始导航'"
+
+  # Condition 2: Verify the 'Driving' tab is selected
+    - type: element_property
+      selector: "text='驾车'"
+      attribute: "selected"
+      value: "true"
+
+  # Condition 3: Verify the destination is 'Summer Palace'
+    - type: element_text_equals
+      selector: "resource-id='com.autonavi.minimap:id/route_edit_summary_end'"
+      text: "颐和园"
+
+
+task_weibo_hotsearch_forward:
+  description: "General rule: Verify that the Weibo repost edit page is successfully entered"
+  conditions:
+  # Condition 1: Verify the page title is 'Repost Weibo' to confirm page function
+    - type: element_text_equals
+      selector: "resource-id='com.sina.weibo:id/titleText'"
+      text: "转发微博"
+      
+  # Condition 2: Verify the 'Send' button exists on the page to confirm final action can be performed
+    - type: element_exists
+      selector: "resource-id='com.sina.weibo:id/titleSave'"
+
+human_validation:
+  description: "Placeholder rule, requires manual validation. This rule will never automatically succeed."
+  conditions:
+  # This condition will look for an element that can never exist, so it will never be satisfied.
+    - type: element_exists
+      selector: "resource-id='this_is_a_placeholder_and_will_never_exist'"
+
+task_weibo_search_blogger_private_message:
+  description: "Verify that a private message was successfully sent to the specified Weibo blogger and a reply containing the specific keyword was received"
+  conditions:
+  # Condition 1: Verify the page title is 'Chinese National Geography' to ensure on the correct private message page
+    - type: element_text_equals
+      selector: "resource-id='com.sina.weibo:id/titleText'"
+      text: "中国国家地理"
+      
+  # Condition 2: Verify the reply contains the keyword '三刊纸刊'
+    - type: element_property_contains
+      selector: "resource-id='com.sina.weibo:id/message_content'"
+      attribute: "text"
+      value: "三刊纸刊"
+
+task_weibo_ranking_weekly_forward:
+  description: "Verify that the Weibo repost page is successfully entered and the specified text is entered"
+  conditions:
+  # Condition 1: Verify the page title is 'Repost Weibo' to ensure on the correct page
+    - type: element_text_equals
+      selector: "resource-id='com.sina.weibo:id/titleText'"
+      text: "转发微博"
+
+task_gmaps_search_save_location:
+  description: "Verifies that a specific location has been successfully saved on Google Maps."
+  conditions:
+    # Condition 2: Verify the 'Save' button is in a 'Saved' state by checking its description and checked status.
+    - type: element_property
+      selector: "content-desc*='is saved to'"
+      attribute: "checked"
+      value: "true"
+
+
+task_gmaps_navigate_driving_route:
+  description: "Generic rule: Verifies that a driving route has been successfully planned in Google Maps."
+  conditions:
+    # Condition 1: Verify the Driving mode tab is present, confirming the context.
+    - type: element_property_contains
+      selector: "class='android.widget.LinearLayout'"
+      attribute: "content-desc"
+      value: "Driving mode"
+      
+    # Condition 2: Verify that a destination has been set by checking for the label.
+    - type: element_property_contains
+      selector: "class='android.widget.TextView'"
+      attribute: "content-desc"
+      value: "Destination,"
+
+    # Condition 3: Verify the 'Start' button is available, confirming the route is ready.
+    - type: element_exists
+      selector: "content-desc='Start'"
+
+task_gmaps_search_transit_route:
+  description: "Verifies that a public transit route to a specific destination has been planned."
+  conditions:
+    # Condition 1: Verify the "Transit mode" tab is active.
+    - type: element_property_contains
+      selector: "class='android.widget.LinearLayout'"
+      attribute: "content-desc"
+      value: "Transit mode"
+
+    # Condition 2: Verify the destination is correct.
+    - type: element_property_contains
+      selector: "class='android.widget.TextView'"
+      attribute: "content-desc"
+      value: "San Francisco"
+
+    # Condition 3: Verify that the list of route options has been loaded.
+    - type: element_exists
+      selector: "resource-id='com.google.android.apps.maps:id/directions_group_list'"

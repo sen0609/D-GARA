@@ -1,0 +1,1941 @@
+
+rules:
+  - id: rule_bili_data_warning_double_1
+    description: "当用户在B站视频播放页时，高概率触发流量消耗提醒。"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["简介","稻香","评价","周杰伦","关注"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double"
+        trigger_probability: 1
+
+  - id: rule_bili_app_wifi_check_forced_2
+    description: "当用户在b站视频播放页时，提示检查Wi-Fi连接。"
+    priority: 600
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["简介","稻香","评价","周杰伦","关注"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_bili_rate_app_double_3
+    description: "当用户进入B站的个人中心页面时，低概率邀请用户去评分。"
+    priority: 800
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.75
+          keywords: ["历史记录", "我的收藏", "创作中心", "稍后再看"]
+    actions:
+      - type: inject_interference
+        interference_id: "bili_rate_app_double"
+        trigger_probability: 1
+
+  - id: rule_bili_app_wifi_check_forced_4
+    description: "当用户在b站视频播放页时，提示检查Wi-Fi连接。"
+    priority: 600
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["关注","知名游戏up主","查看全部","番剧","直播"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_bili_youth_mode_forced_5
+    description: "当用户进入B站首页时，模拟触发青少年模式提示。"
+    priority: 700
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.25
+          keywords: ["首页","关注","会员购","我的"]
+    actions:
+      - type: inject_interference
+        interference_id: "bili_youth_mode_forced"
+        trigger_probability: 1
+  
+  - id: rule_bili_rate_app_double_6
+    description: "当用户进入B站的个人中心页面时，低概率邀请用户去评分。"
+    priority: 800
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.75
+          keywords: ["离线缓存","历史记录","我的收藏","稍后再看"]
+    actions:
+      - type: inject_interference
+        interference_id: "bili_rate_app_double"
+        trigger_probability: 1
+
+  - id: rule_bili_low_battery_forced_7
+    description: "当用户在B站视频播放页时，模拟系统低电量提示。"
+    priority: 50 
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.25
+          keywords: ["老师好我叫何同学","关注","百大UP主","番剧"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_forced"
+        trigger_probability: 1
+
+  - id: rule_bili_app_update_double_8
+    description: "当用户在b站分类页面时，提示应用更新。"
+    priority: 90 
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["快捷访问","全部分区","翻去","国创","纪录片"]
+    actions:
+      - type: inject_interference
+        interference_id: "app_update_double"
+        trigger_probability: 1
+
+  - id: rule_bili_low_battery_forced_9
+    description: "当用户在B站视频播放页时，模拟系统低电量提示。"
+    priority: 50 
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.25
+          keywords: ["发个友善的弹幕见证当下","字体大小","弹幕位置","弹幕颜色"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_forced"
+        trigger_probability: 1
+
+  - id: rule_jd_low_battery_double_10
+    description: "当用户在京东App中进行搜索时，模拟系统低电量提醒。"
+    priority: 50 
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.25
+          keywords: ["PLUS到手价","光驱","数字","满一件可换购"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double"
+        trigger_probability: 1
+  
+
+  - id: rule_jd_wifi_check_forced_11
+    description: "当用户在京东App中进行搜索时，提示检查Wi-Fi连接。"
+    priority: 600
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["特价","首页","推荐","搜索","品质生活"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_jd_data_warning_double_12
+    description: "当用户在B站视频播放页时，高概率触发流量消耗提醒。"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["三体","店铺","加入购物车","立即购买"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double"
+        trigger_probability: 1
+
+
+  - id: rule_jd_low_battery_forced_13
+    description: "当用户在B站视频播放页时，模拟系统低电量提示。"
+    priority: 50 
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.25
+          keywords: ["商品","店铺","默认","降价","促销","分类","库存"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_forced"
+        trigger_probability: 1
+
+  - id: rule_jd_wifi_check_forced_14
+    description: "当用户在b站视频播放页时，提示检查Wi-Fi连接。"
+    priority: 600
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["请输入"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_jd_app_crash_forced_15
+    description: "当用户在京东App中发生应用崩溃时，模拟应用闪退提示。"
+    priority: 900 
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["怡宝矿泉水","搜索","反馈"]
+    actions:
+      - type: inject_interference
+        interference_id: "jd_app_crash_forced"
+        trigger_probability: 1
+
+  - id: rule_amap_low_battery_double_16
+    description: "当用户在高德地图App中进行搜索时，模拟系统低电量提醒。"
+    priority: 50 
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.25
+          keywords: ["四平路","985大学","国康路","路线"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double"
+        trigger_probability: 1
+
+  - id: rule_amap_low_battery_forced_17
+    description: "当用户在高德地图App中进行搜索时，模拟系统低电量提醒。"
+    priority: 50 
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.25
+          keywords: ["四平路","985大学","国康路","路线"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_forced"
+        trigger_probability: 1
+  
+  - id: rule_amap_data_warning_double_18
+    description: "当用户在高德地图导航页时，高概率触发流量消耗提醒。"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["首页","附近","消息","打车","我的"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double"
+        trigger_probability: 1
+  
+
+  - id: rule_amap_location_permission_prompt_19
+    description: "当用户在高德地图首页时，请求定位权限。"
+    priority: 150
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.6
+          keywords: ["首页","附近","消息","打车","我的"]
+    actions:
+      - type: inject_interference
+        interference_id: "amap_location_permission_prompt"
+        trigger_probability: 1
+
+  - id: rule_amap_wifi_check_forced_20
+    description: "当用户在b站视频播放页时，提示检查Wi-Fi连接。"
+    priority: 600
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["首页","附近","消息","打车","我的"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_amap_location_permission_prompt_21
+    description: "当用户在高德地图首页时，请求定位权限。"
+    priority: 150
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.6
+          keywords: ["首页","附近","消息","打车","我的"]
+    actions:
+      - type: inject_interference
+        interference_id: "amap_location_permission_prompt"
+        trigger_probability: 1
+
+  - id: rule_ctrip_low_battery_double_27
+    description: "当用户在携程机票列表页时，触发低电量提醒（双按钮）。"
+    priority: 50 
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.75
+          keywords: ["机票", "查询", "航班助手", "我的权益"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double"
+        trigger_probability: 1
+
+  - id: rule_ctrip_wifi_check_forced_28
+    description: "当用户在携程酒店搜索列表页时，模拟强制断网。"
+    priority: 100 
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["综合", "景点", "酒店", "旅游"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_ctrip_app_update_double_29
+    description: "当用户在携程火车票详情页时，模拟强制更新并杀死后台。"
+    priority: 950 
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.8
+          keywords: ["二等座", "订", "上海虹桥", "北京南", "退改说明"]
+    actions:
+    - type: inject_interference
+      interference_id: "app_update_double"
+      trigger_probability: 1
+
+  - id: rule_ctrip_data_warning_double_30
+    description: "当用户在携程旅游频道首页时，触发流量提醒（双按钮）。"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.8
+          keywords: ["寻找旅游灵感", "为我定制", "搜索", "旅游首页", "目的地"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double"
+        trigger_probability: 1
+
+  - id: rule_ctrip_location_permission_prompt_31
+    description: "当用户在携程景点门票详情页时，强制请求位置权限。"
+    priority: 150 
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.75
+          keywords: ["首页", "消息", "行程", "我的"]
+    actions:
+      - type: inject_interference
+        interference_id: "ctrip_location_permission_prompt"
+        trigger_probability: 1
+  
+
+  - id: rule_amazon_data_warning_double_en_32
+    description: "当用户在亚马逊搜索结果页尝试筛选品牌时，触发流量消耗提醒。"
+    priority: 400 
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.3
+          keywords: ["Join", "Search or ask a question", "Groceries"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double_en"
+        trigger_probability: 1
+
+  - id: rule_amazon_low_battery_forced_en_33
+    description: "当用户在亚马逊商品详情页准备将商品加入购物车时，模拟低电量提醒。"
+    priority: 50 
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.4
+          keywords: ["Add to chart", "Buy Now", "Add to List"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_forced_en"
+        trigger_probability: 1
+
+  - id: rule_amazon_wifi_check_forced_en_34
+    description: "当用户在亚马逊购物车页面试图更改商品数量时，模拟强制断网弹窗。"
+    priority: 100 
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["Shopping Cart", "subtotal", "Qty", "Delete", "Save for later"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced_en"
+        trigger_probability: 1
+
+  - id: rule_amazon_rate_app_double_en_35
+    description: "当用户在亚马逊商品详情页准备将商品添加至列表时，模拟应用商店评分弹窗。"
+    priority: 500 
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.3
+          keywords: ["Add to chart", "Buy Now", "Add to List"]
+    actions:
+      - type: inject_interference
+        interference_id: "amazon_rate_app_double_en"
+        trigger_probability: 1
+
+  - id: rule_amazon_low_battery_forced_en_36
+    description: "当用户在亚马逊购物车中将商品移至'稍后购买'时，模拟低电量提醒。"
+    priority: 50 
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.4
+          keywords: ["Shopping Cart", "Delete", "Save for later", "Proceed to checkout"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_forced_en"
+        trigger_probability: 1
+
+  - id: rule_facebook_data_warning_double_en_37
+    description: "当用户在Facebook信息流中浏览并准备点赞时，触发流量消耗提醒。"
+    priority: 400 
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["Like", "Comment", "Share"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double_en"
+        trigger_probability: 1
+
+  - id: rule_facebook_wifi_check_forced_en_38
+    description: "当用户在Facebook搜索用户后，在结果页面模拟强制断网。"
+    priority: 100 
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.4
+          keywords: ["All", "Posts", "People", "Groups"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced_en"
+        trigger_probability: 1
+
+  - id: rule_facebook_low_battery_double_39
+    description: "当用户进入自己的Facebook个人主页时，模拟一个双按钮电量提醒弹窗。"
+    priority: 50 
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.3
+          keywords: ["Edit Profile", "Add to Story", "Posts"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double_en"
+        trigger_probability: 1
+  - id: rule_bili_low_battery_double_40
+    description: "Rule for task 40: 40. 打开哔哩哔哩，搜索“林俊杰-可惜没如果”，点击第一个视频并投币"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords:  ["林俊杰", "可惜没如果", "投币", "收藏", "弹幕"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double"
+        trigger_probability: 1
+
+  - id: rule_jd_data_warning_double_41
+    description: "Rule for task 41: 41. 打开京东，搜索“大疆无人机”，进入第一个商品页面，并添加至购物车"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["全部","口碑","综合推荐","销量","价格","筛选"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double"
+        trigger_probability: 1
+
+  - id: rule_amap_wifi_check_forced_42
+    description: "Rule for task 42: 42. 打开高德地图，搜索从故宫到颐和园的公共交通路线"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["首页","附近","消息","打车","我的"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_bili_low_battery_double_43
+    description: "Rule for task 43: 43. 打开哔哩哔哩，搜索纪录片“蓝色星球”，并收藏第一个视频"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["蓝色星球","纪录片", "简介","评论"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double"
+        trigger_probability: 1
+
+  - id: rule_jd_app_crash_forced_44
+    description: "Rule for task 44: 44. 打开京东，搜索“NVIDIA 4090显卡”，进入第一个商品详情页"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["店铺", "客服", "加入购物车", "立即购买"]
+    actions:
+      - type: inject_interference
+        interference_id: "jd_app_crash_forced"
+        trigger_probability: 1
+
+  - id: rule_amap_location_permission_prompt_45
+    description: "Rule for task 45: 45. 打开高德地图，导航到“广州塔”，选择驾车路线"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["公交地铁", "驾车", "附近","我的"]
+    actions:
+      - type: inject_interference
+        interference_id: "amap_location_permission_prompt"
+        trigger_probability: 1
+
+  - id: rule_bili_wifi_check_forced_46
+    description: "Rule for task 46: 46. 打开哔哩哔哩，搜索“科技美学”，进入最新视频并投币"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["科技美学", "简介", "弹幕", "评论"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_jd_app_crash_forced_47
+    description: "Rule for task 47: 47. 打开京东，搜索“清风抽纸”，并查看第一个商品详情"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["全部", "口碑", "综合推荐", "销量", "价格", "筛选"]
+    actions:
+      - type: inject_interference
+        interference_id: "jd_app_crash_forced"
+        trigger_probability: 1
+
+  - id: rule_amap_data_warning_double_48
+    description: "Rule for task 48: 48. 打开高德地图，搜索“海底捞火锅 (西单店)”并收藏"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["首页", "附近", "消息", "打车", "我的"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double"
+        trigger_probability: 1
+
+  - id: rule_bili_youth_mode_forced_49
+    description: "Rule for task 49: 49. 打开哔哩哔哩，搜索“ASMR 雨声”，点赞播放量最高的视频"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords:  ["简介", "弹幕", "评论"]
+    actions:
+      - type: inject_interference
+        interference_id: "bili_youth_mode_forced"
+        trigger_probability: 1
+
+  - id: rule_jd_app_update_double_50
+    description: "Rule for task 50: 50. 打开京东，搜索“三只松鼠坚果”，进入第一个商品并查看买家评价"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords:  ["三只松鼠", "店铺", "购物车"]
+    actions:
+      - type: inject_interference
+        interference_id: "app_update_double"
+        trigger_probability: 1
+
+  - id: rule_amap_low_battery_double_51
+    description: "Rule for task 51: 51. 打开高德地图，搜索“上海博物馆”并添加到收藏"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["上海博物馆", "周边", "收藏", "分享", "导航", "路线"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double"
+        trigger_probability: 1
+
+  - id: rule_jd_app_crash_forced_52
+    description: "Rule for task 52: 52. 打开京东，搜索“活着 余华”，将第一个结果加入购物车"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["活着", "余华", "店铺", "购物车"]
+    actions:
+      - type: inject_interference
+        interference_id: "jd_app_crash_forced"
+        trigger_probability: 1
+
+  - id: rule_bili_low_battery_forced_53
+    description: "Rule for task 53: 53. 打开哔哩哔哩，搜索“帕梅拉”，收藏第一个训练视频"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["帕梅拉", "综合", "番剧", "用户"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_forced"
+        trigger_probability: 1
+
+  - id: rule_bili_low_battery_forced_54
+    description: "Rule for task 54: 54. 打开哔哩哔哩，点击\"热门\"，进入“排行榜”并给第一个视频投币"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["排行榜", "每周必看", "热门"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_forced"
+        trigger_probability: 1
+
+  - id: rule_jd_data_warning_double_55
+    description: "Rule for task 55: 55. 打开京东，搜索“空气炸锅”并向客服咨询“什么时候发货”"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["空气炸锅", "店铺", "购物车"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double"
+        trigger_probability: 1
+
+  - id: rule_amap_wifi_check_forced_56
+    description: "Rule for task 56: 56. 打开高德地图，导航到“迪士尼乐园”，选择公共交通路线"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["首页", "附近", "消息", "打车", "我的"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_bili_low_battery_forced_57
+    description: "Rule for task 57: 57. 打开哔哩哔哩，搜索“VLOG”，点赞第一个视频"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["VLOG", "综合", "番剧", "用户"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_forced"
+        trigger_probability: 1
+
+  - id: rule_jd_low_battery_double_58
+    description: "Rule for task 58: 58. 打开京东，进入“我的”页面，查看“浏览记录”，并浏览第一个商品"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["客户服务", "地址", "设置"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double"
+        trigger_probability: 1
+
+  - id: rule_amap_low_battery_double_59
+    description: "Rule for task 59: 59. 打开高德地图，搜索到“徐家汇”的驾车路线"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["徐家汇", "驾车", "我的位置"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double"
+        trigger_probability: 1
+
+  - id: rule_bili_low_battery_double_60
+    description: "Rule for task 60: 60. 打开哔哩哔哩，点击\"热门\"，进入“每周必看”并给第一个视频投币"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["排行榜", "每周必看", "热门"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double"
+        trigger_probability: 1
+
+  - id: rule_jd_app_crash_forced_61
+    description: "Rule for task 61: 61. 打开京东，搜索“加湿器”，查看第一个商品的评论"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["加湿器", "店铺", "购物车"]
+    actions:
+      - type: inject_interference
+        interference_id: "jd_app_crash_forced"
+        trigger_probability: 1
+
+  - id: rule_bili_rate_app_double_62
+    description: "Rule for task 62: 62. 打开哔哩哔哩，进入“我的”页面，打开“稍后再看”，播放第一个视频"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["全部", "未看完", "最近添加"]
+    actions:
+      - type: inject_interference
+        interference_id: "bili_rate_app_double"
+        trigger_probability: 1
+
+  - id: rule_bili_low_battery_forced_63
+    description: "Rule for task 63: 63. 打开哔哩哔哩，进入“频道”分区，打开“舞蹈”频道，播放第一个视频并投币"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["番剧", "国创", "纪录片", "电影", "分区", "快捷访问"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_forced"
+        trigger_probability: 1
+
+  - id: rule_jd_low_battery_double_64
+    description: "Rule for task 64: 64. 打开京东，搜索“显示器”，并进入一个商品页面，分享该商品"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["分享", "店铺", "加入购物车", "立即购买"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double"
+        trigger_probability: 1
+
+  - id: rule_ctrip_low_battery_double_65
+    description: "Rule for task 65: 65. 打开携程，搜索从“广州”到“北京”的明天出发的单程机票，并预定第一个机票"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["经济舱", "公务 / 头等舱", "选购", "收藏"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double"
+        trigger_probability: 1
+
+  - id: rule_ctrip_wifi_check_forced_66
+    description: "Rule for task 66: 66. 打开携程，搜索“复旦大学邯郸校区”的酒店，并查看列表里第一家酒店的详情"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["综合", "景点", "酒店", "旅游"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_ctrip_app_update_double_67
+    description: "Rule for task 67: 67. 打开携程，预订一张明天从“广州南站”到“北京南”的G开头的高铁二等座"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["二等座", "订", "广州南站", "北京南", "退改说明"]
+    actions:
+      - type: inject_interference
+        interference_id: "app_update_double"
+        trigger_probability: 1
+
+  - id: rule_ctrip_data_warning_double_68
+    description: "Rule for task 68: 68. 打开携程，进入“旅游/跟团”频道，浏览一个前往“广州”的5日跟团游产品"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["寻找旅游灵感", "为我定制", "搜索"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double"
+        trigger_probability: 1
+
+  - id: rule_ctrip_location_permission_prompt_69
+    description: "Rule for task 69: 69. 打开携程，搜索“上海美术馆”的门票信息，选择1日游并选择最近的日期并预定"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["首页", "消息", "行程", "我的"]
+    actions:
+      - type: inject_interference
+        interference_id: "ctrip_location_permission_prompt"
+        trigger_probability: 1
+
+  - id: rule_ctrip_low_battery_double_70
+    description: "Rule for task 70: 70. 打开携程，搜索从“北京”到“上海”的明天出发的单程机票，并预定第一个机票"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["机票", "查询", "航班助手", "我的权益"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double"
+        trigger_probability: 1
+
+  - id: rule_ctrip_wifi_check_forced_71
+    description: "Rule for task 71: 71. 打开携程，搜索“上海交通大学大学徐汇校区”的酒店，并查看列表里第一家酒店的详情"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["综合", "景点", "酒店", "旅游"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_ctrip_app_update_double_72
+    description: "Rule for task 72: 72. 打开携程，预订一张明天从“广州南”到“北京西”的G开头的高铁二等座"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["二等座", "订", "广州南", "北京西", "退改说明"]
+    actions:
+      - type: inject_interference
+        interference_id: "app_update_double"
+        trigger_probability: 1
+
+  - id: rule_ctrip_data_warning_double_73
+    description: "Rule for task 73: 73 打开携程，进入“旅游/跟团”频道，浏览一个前往“北京”的5日跟团游产品"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["寻找旅游灵感", "为我定制", "搜索", "旅游首页", "目的地"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double"
+        trigger_probability: 1
+
+  - id: rule_ctrip_location_permission_prompt_74
+    description: "Rule for task 74: 74 打开携程，搜索“上海博物馆”的门票信息，选择1日游并选择最近的日期并预定"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["首页", "消息", "行程", "我的"]
+    actions:
+      - type: inject_interference
+        interference_id: "ctrip_location_permission_prompt"
+        trigger_probability: 1
+
+  - id: rule_facebook_wifi_check_forced_en_75
+    description: "Rule for task 75: 75.Open Facebook, search for a person named 'Leonardo DiCaprio', and like the profile of the first result."
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.32
+          keywords: ["facebook", "What's on your mind?", "creat story"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced_en"
+        trigger_probability: 1
+
+  - id: rule_facebook_wifi_check_forced_en_76
+    description: "Rule for task 76: 76.Open Facebook, search for a person named 'Beyoncé', and like the profile of the first result."
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["All", "Posts", "People", "Groups"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced_en"
+        trigger_probability: 1
+
+  - id: rule_facebook_wifi_check_forced_en_77
+    description: "Rule for task 77: 77.Open Facebook, search for a person named 'Cristiano Ronaldo', and like the profile of the first result."
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["All", "Posts", "People", "Groups"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced_en"
+        trigger_probability: 1
+
+  - id: rule_facebook_wifi_check_forced_en_78
+    description: "Rule for task 78: 78.Open Facebook, search for a person named 'Dwayne Johnson', and like the profile of the first result."
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["All", "Posts", "People", "Groups"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced_en"
+        trigger_probability: 1
+
+  - id: rule_facebook_wifi_check_forced_en_79
+    description: "Rule for task 79: 79.Open Facebook, search for a person named 'Lady Gaga', and like the profile of the first result."
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["All", "Posts", "People", "Groups"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced_en"
+        trigger_probability: 1
+
+  - id: rule_bili_wifi_check_forced_80
+    description: "Rule for task 80: 80. 打开哔哩哔哩，搜索“身骑白马”，点击第一个视频，并点击“收藏”按钮"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["简介", "身骑白马", "评价", "张杰", "关注"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_bili_wifi_check_forced_81
+    description: "Rule for task 81: 81. 打开哔哩哔哩，搜索UP主“影视剧风”，进入第一个视频并收藏"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["关注", "百大up主", "查看全部", "番剧", "直播"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_bili_low_battery_forced_82
+    description: "Rule for task 82: 82. 打开哔哩哔哩，搜索UP主“毕导”，进入其个人空间，播放最新发布的视频并投币"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["毕导", "关注", "百大UP主", "番剧"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_forced"
+        trigger_probability: 1
+
+  - id: rule_bili_wifi_check_forced_83
+    description: "Rule for task 83: 83. 打开哔哩哔哩，搜索“花海”，点击第一个视频，并点击“收藏”按钮"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["简介", "花海", "评价", "周杰伦", "关注"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_bili_wifi_check_forced_84
+    description: "Rule for task 84: 84. 打开哔哩哔哩，搜索UP主“食贫道”，进入第一个视频并收藏"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["关注", "知名游戏 up 主", "食贫道", "番剧", "直播"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_bili_low_battery_forced_85
+    description: "Rule for task 85: 85. 打开哔哩哔哩，搜索UP主“陶喆的音乐产房”，进入其个人空间，播放最新发布的视频并投币"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["陶喆的音乐产房", "关注", "百大 UP 主", "番剧"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_forced"
+        trigger_probability: 1
+
+  - id: rule_jd_low_battery_double_86
+    description: "Rule for task 86: 86. 打开京东，搜索'任天堂 Switch'，并且进入第一个商品页面，添加至购物车"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["任天堂", "Switch", "加入购物车", "游戏机", "店铺"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double"
+        trigger_probability: 1
+
+  - id: rule_jd_wifi_check_forced_87
+    description: "Rule for task 87: 87. 打开京东，搜索“华为Mate60Pro”并进入标题第一个商品详情页"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["特价", "首页", "推荐", "搜索", "品质生活"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_jd_data_warning_double_88
+    description: "Rule for task 88: 88. 打开京东，搜索\"长安的荔枝\"，进入第一个商品页面并在商品详情页中点击“分享”按钮"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["长安的荔枝", "分享", "马伯庸", "加入购物车", "店铺"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double"
+        trigger_probability: 1
+
+  - id: rule_jd_low_battery_forced_89
+    description: "Rule for task 89: 89. 打开京东，进入“我的”并点击“浏览记录”进入收藏列表，查看第一个收藏商品页面"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["商品", "店铺", "浏览记录", "频道", "清空", "管理"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_forced"
+        trigger_probability: 1
+
+  - id: rule_jd_wifi_check_forced_90
+    description: "Rule for task 90: 90. 打开京东，浏览“电竞椅”,进入第一个商品，点击客服标签，发送‘质保多久’给客服"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["请输入"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_jd_app_crash_forced_91
+    description: "Rule for task 91: 91. 打开京东，浏览'农夫山泉',进入第一个商品，点击“买家评价”进入评价列表页显示“商品评价"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["农夫山泉", "反馈", "搜索"]
+    actions:
+      - type: inject_interference
+        interference_id: "jd_app_crash_forced"
+        trigger_probability: 1
+
+  - id: rule_amap_low_battery_double_92
+    description: "Rule for task 92: 92. 打开高德，搜索‘北京大学’，并且点击收藏"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["北京市海淀区", "路线", "985 大学", "跨城"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double"
+        trigger_probability: 1
+
+  - id: rule_amap_low_battery_double_93
+    description: "Rule for task 93: 93. 打开高德地图，导航到‘北京大学’，选择驾车路线"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["北京市海淀区", "路线", "985 大学", "跨城"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double"
+        trigger_probability: 1
+
+  - id: rule_amap_data_warning_double_94
+    description: "Rule for task 94: 94. 打开高德地图，导航到‘颐和园’，选择驾车路线"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["首页", "附近", "消息", "打车", "我的"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double"
+        trigger_probability: 1
+
+  - id: rule_amap_location_permission_prompt_95
+    description: "Rule for task 95: 95. 打开高德地图，搜索从北京大学到中国人民大学的公共交通路线"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["首页", "附近", "消息", "打车", "我的"]
+    actions:
+      - type: inject_interference
+        interference_id: "amap_location_permission_prompt"
+        trigger_probability: 1
+
+  - id: rule_amap_wifi_check_forced_96
+    description: "Rule for task 96: 96. 打开高德地图，搜索从北京大学到清华大学的公共交通路线"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["首页", "附近", "消息", "打车", "我的"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_amap_location_permission_prompt_97
+    description: "Rule for task 97: 97. 打开高德地图，搜索从北京大学到清华大学的公共交通路线"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["首页", "附近", "消息", "打车", "我的"]
+    actions:
+      - type: inject_interference
+        interference_id: "amap_location_permission_prompt"
+        trigger_probability: 1
+
+  - id: rule_jd_low_battery_double_98
+    description: "Rule for task 98: 98. 打开京东，搜索“微软 Xbox Series X”，并且进入第一个商品页面，添加至购物车"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["微软", "Xbox", "Series X", "加入购物车", "店铺"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double"
+        trigger_probability: 1
+
+  - id: rule_jd_wifi_check_forced_99
+    description: "Rule for task 99: 99. 打开京东，搜索“三星 Galaxy S25 Ultra”并进入标题第一个商品详情页"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["SAMSUNG", "Galaxy", "立即购买", "客服", "参数"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_jd_data_warning_double_100
+    description: "Rule for task 100: 100. 打开京东，搜索“庆余年”，进入第一个商品页面并在商品详情页中点击“分享”按钮"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["庆余年", "分享", "猫腻", "加入购物车", "店铺"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double"
+        trigger_probability: 1
+
+  - id: rule_jd_low_battery_forced_101
+    description: "Rule for task 101: 101. 打开京东，进入“我的”并点击“优惠券”进入列表，查看第一张优惠券"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["我的优惠券", "去使用", "领券中心", "已过期"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_forced"
+        trigger_probability: 1
+
+  - id: rule_jd_wifi_check_forced_102
+    description: "Rule for task 102: 102. 打开京东，浏览“机械键盘”,进入第一个商品，点击客服标签，发送‘有静音款吗’给客服"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["请输入"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_jd_app_crash_forced_103
+    description: "Rule for task 103: 103. 打开京东，浏览“百岁山”,进入第一个商品，点击“买家评价”进入评价列表页"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["全部", "有图", "最新", "好评", "差评"]
+    actions:
+      - type: inject_interference
+        interference_id: "jd_app_crash_forced"
+        trigger_probability: 1
+
+  - id: rule_amap_low_battery_double_104
+    description: "Rule for task 104: 104. 打开高德地图，搜索‘四川大学’，并且点击收藏"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["四川大学", "985 高校", "望江校区", "到这去", "收藏"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double"
+        trigger_probability: 1
+
+  - id: rule_amap_low_battery_double_105
+    description: "Rule for task 105: 105. 打开高德地图，导航到‘四川大学’，选择驾车路线"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["四川大学", "驾车", "开始导航", "全程", "耗时"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double"
+        trigger_probability: 1
+
+  - id: rule_amap_data_warning_double_106
+    description: "Rule for task 106: 106. 打开高德地图，导航到‘成都太古里’，选择驾车路线"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["成都太古里", "驾车", "开始导航", "停车场", "门票"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double"
+        trigger_probability: 1
+
+  - id: rule_amap_location_permission_prompt_107
+    description: "Rule for task 107: 107. 打开高德地图，搜索从四川大学到成都太古里的公共交通路线"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["公交", "地铁", "换乘", "方案", "时间"]
+    actions:
+      - type: inject_interference
+        interference_id: "amap_location_permission_prompt"
+        trigger_probability: 1
+
+  - id: rule_amap_wifi_check_forced_108
+    description: "Rule for task 108: 108. 打开高德地图，搜索从四川大学到电子科技大学的公共交通路线"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["公交", "地铁", "换乘", "方案", "时间"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_amap_location_permission_prompt_109
+    description: "Rule for task 109: 109. 打开高德地图，搜索从四川大学到成都双流国际机场的公共交通路线"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["公交", "地铁", "换乘", "方案", "时间"]
+    actions:
+      - type: inject_interference
+        interference_id: "amap_location_permission_prompt"
+        trigger_probability: 1
+
+  - id: rule_ctrip_low_battery_double_110
+    description: "Rule for task 110: 110. 打开携程，搜索从“深圳”到“南京”的明天出发的单程机票，并预定第一个机票"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["筛选", "排序", "经济舱", "准点率", "预订"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double"
+        trigger_probability: 1
+
+  - id: rule_ctrip_wifi_check_forced_111
+    description: "Rule for task 111: 111. 打开携程，搜索“成都春熙路”的酒店，并查看列表里第一家酒店的详情"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["筛选", "价格 / 星级", "评分", "设施服务", "预订"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_ctrip_low_battery_double_112
+    description: "Rule for task 112: 112. 打开携程，预订一张明天从“广州南”到“长沙南”的G开头的高铁二等座"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["二等座", "订", "乘车人", "选择座位", "提交订单"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double"
+        trigger_probability: 1
+
+  - id: rule_ctrip_data_warning_double_113
+    description: "Rule for task 113: 113. 打开携程，进入“旅游/跟团”频道，浏览一个前往“张家界”的5日跟团游产品"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["首页", "消息", "行程", "我的"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double"
+        trigger_probability: 1
+
+  - id: rule_ctrip_location_permission_prompt_114
+    description: "Rule for task 114: 114. 打开携程，搜索“黄山风景区”的门票信息，选择1日游并选择最近的日期并预定"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["首页", "消息", "行程", "我的"]
+    actions:
+      - type: inject_interference
+        interference_id: "ctrip_location_permission_prompt"
+        trigger_probability: 1
+
+  - id: rule_amazon_data_warning_double_115
+    description: "Rule for task 115: 115.Open Amazon, search for 'iphone',select the first and add to cart"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["search or ask a question", "Join Prime", "groceries"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double"
+        trigger_probability: 1
+
+  - id: rule_amazon_low_battery_double_en_116
+    description: "Rule for task 116: 116.Open Amazon, search for 'tea', navigate to the first product's detail page, and add it to the cart."
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["Add to Cart", "Buy Now", "Add to List"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double_en"
+        trigger_probability: 1
+
+  - id: rule_amazon_wifi_check_forced_en_117
+    description: "Rule for task 117: 117.Open Amazon, navigate to the shopping cart, and change the quantity of the first item to 2."
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["Shopping Cart", "Subtotal", "Qty", "Delete", "Save for later"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced_en"
+        trigger_probability: 1
+
+  - id: rule_amazon_rate_app_double_en_118
+    description: "Rule for task 118: 118.Open Amazon, search for 'Dune', navigate to the first product's detail page, and add it to a List."
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["Add to Cart", "Buy Now", "Add to List"]
+    actions:
+      - type: inject_interference
+        interference_id: "amazon_rate_app_double_en"
+        trigger_probability: 1
+
+  - id: rule_amazon_data_warning_double_en_119
+    description: "Rule for task 119: 119.Open Amazon, search for 'Kindle Paperwhite',select the first and add to cart"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["Filter", "Sort by", "kindle"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double_en"
+        trigger_probability: 1
+
+  - id: rule_amazon_data_warning_double_en_120
+    description: "Rule for task 120: 120.Open Amazon, search for 'camera',select the first and add to cart"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["search or ask a question", "Join Prime", "groceries"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double_en"
+        trigger_probability: 1
+
+  - id: rule_amazon_low_battery_double_en_121
+    description: "Rule for task 121: 121.Open Amazon, search for 'Harry Poter', navigate to the first product's detail page, and add it to the cart."
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["Add to Cart", "Buy Now", "Add to List"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double_en"
+        trigger_probability: 1
+
+  - id: rule_amazon_rate_app_double_en_122
+    description: "Rule for task 122: 122.Open Amazon, search for 'Instant Pot Duo', navigate to the first product's detail page, and add it to a List."
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["Add to Cart", "Buy Now", "Add to List"]
+    actions:
+      - type: inject_interference
+        interference_id: "amazon_rate_app_double_en"
+        trigger_probability: 1
+
+  - id: rule_amazon_data_warning_double_en_123
+    description: "Rule for task 123: 123.Open Amazon, search for 'Dyson Supersonic',select the first and add to cart"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["Filter", "Sort by", "Dyson"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double_en"
+        trigger_probability: 1
+
+  - id: rule_amazon_data_warning_double_en_124
+    description: "Rule for task 124: 124.Open Amazon, search for 'Adidas Ultraboost',select the first and add to cart"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["search or ask a question", "Join Prime", "groceries"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double_en"
+        trigger_probability: 1
+
+  - id: rule_amazon_low_battery_forced_en_125
+    description: "Rule for task 125: 125.Open Amazon, search for 'Under Armour', navigate to the first product's detail page, and add it to the cart."
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["Add to Cart", "Buy Now", "Add to List"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_forced_en"
+        trigger_probability: 1
+
+  - id: rule_amazon_rate_app_double_en_126
+    description: "Rule for task 126: 126.Open Amazon, search for 'Logitech G403', navigate to the first product's detail page, and add it to a List."
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["Add to Cart", "Buy Now", "Add to List"]
+    actions:
+      - type: inject_interference
+        interference_id: "amazon_rate_app_double_en"
+        trigger_probability: 1
+
+  - id: rule_amazon_data_warning_double_en_127
+    description: "Rule for task 127: 127.Open Amazon, search for 'Levi's 501',select the first and add to cart"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["Filter", "Sort by", "Levis"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double_en"
+        trigger_probability: 1
+
+  - id: rule_weibo_app_crash_forced_128
+    description: "当用户在微博话题详情页转发第一条微博时，模拟应用闪退提示。"
+    priority: 900
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["综合", "实时", "视频", "图片"]
+    actions:
+      - type: inject_interference
+        interference_id: "weibo_app_crash_forced"
+        trigger_probability: 1
+
+  - id: rule_weibo_wifi_check_forced_129
+    description: "当用户在微博消息页查看微博小助手消息中的常见问题（会员相关）时，提示检查Wi-Fi连接。"
+    priority: 600
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["微博小秘书", "常见问题", "自助服务", "客服中心"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_weibo_wifi_check_forced_130
+    description: "当用户在微博央视新闻博主主页文章板块点赞最新新闻时，提示检查Wi-Fi连接。"
+    priority: 600
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["主页","视频","发现","信息","推荐"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_weibo_app_crash_forced_131
+    description: "当用户在微博设置页的隐私设置中修改评论权限时，模拟应用闪退提示。"
+    priority: 900
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["账号管理", "设置", "账号安全", "未成年人模式"]
+    actions:
+      - type: inject_interference
+        interference_id: "weibo_app_crash_forced"
+        trigger_probability: 1
+
+  - id: rule_weibo_location_permission_prompt_132
+    description: "当用户在微博同城动态页最新模块给第一篇微博点赞时，请求定位权限。"
+    priority: 150
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["最新", "附近", "同城", "搜此地"]
+    actions:
+      - type: inject_interference
+        interference_id: "weibo_location_permission_prompt"
+        trigger_probability: 1
+
+  - id: rule_weibo_data_warning_double_133
+    description: "当用户在微博中国国家地理博主主页私信咨询杂志购买时，触发流量消耗提醒。"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["主页","视频","发现","信息","推荐"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double"
+        trigger_probability: 1
+
+  - id: rule_weibo_wifi_check_forced_134
+    description: "当用户在微博榜单页面周榜为第一条点赞时，提示检查Wi-Fi连接。"
+    priority: 600
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["本地榜", "小时榜", "周榜", "高赏榜", "推荐"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_weibo_low_battery_double_135
+    description: "当用户在微博榜单页面周榜转发第一条并配文时，模拟双按钮低电量提醒。"
+    priority: 50
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["本地榜", "小时榜", "周榜", "高赏榜", "推荐"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double"
+        trigger_probability: 1
+
+  - id: rule_weibo_app_crash_forced_136
+    description: "当用户在微博榜单页面周榜查看第一条评论区并点赞第一条评论时，模拟应用闪退提示。"
+    priority: 900
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["本地榜", "小时榜", "周榜", "高赏榜", "推荐"]
+    actions:
+      - type: inject_interference
+        interference_id: "weibo_app_crash_forced"
+        trigger_probability: 1
+
+  - id: rule_weibo_wifi_check_forced_137
+    description: "当用户在微博设置页的隐私设置中修改私信接收权限为关注的人时，提示检查Wi-Fi连接。"
+    priority: 600
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["账号管理", "设置", "账号安全", "未成年人模式"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_weibo_low_battery_double_138
+    description: "当用户在微博话题详情页对第一条微博点赞时，模拟双按钮低电量提醒。"
+    priority: 50
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["综合", "实时", "视频", "图片"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_double"
+        trigger_probability: 1
+
+  - id: rule_weibo_app_crash_forced_139
+    description: "当用户在微博话题详情页查看评论区并给第一条评论点赞时，模拟应用闪退提示。"
+    priority: 900
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["综合", "实时", "视频", "图片"]
+    actions:
+      - type: inject_interference
+        interference_id: "weibo_app_crash_forced"
+        trigger_probability: 1
+
+  - id: rule_weibo_data_warning_double_140
+    description: "当用户在微博消息页查看微博小助手消息中的常见问题（账号安全）时，触发流量消耗提醒。"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["微博小秘书", "常见问题", "自助服务", "客服中心"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double"
+        trigger_probability: 1
+
+  - id: rule_weibo_low_battery_forced_141
+    description: "当用户在微博人民日报博主主页文章板块点赞最新新闻时，模拟系统低电量提示。"
+    priority: 50
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["主页","视频","发现","信息","推荐"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_forced"
+        trigger_probability: 1
+
+  - id: rule_weibo_location_permission_prompt_142
+    description: "当用户在微博设置页的通知设置中开启通知免打扰时，请求定位权限。"
+    priority: 150
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["账号管理", "设置", "账号安全", "未成年人模式"]
+    actions:
+      - type: inject_interference
+        interference_id: "weibo_location_permission_prompt"
+        trigger_probability: 1
+
+  - id: rule_weibo_location_permission_prompt_143
+    description: "当用户在微博同城动态页最新模块互动板块给第一篇微博点赞时，请求定位权限。"
+    priority: 150
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["最新", "附近", "同城", "搜此地"]
+    actions:
+      - type: inject_interference
+        interference_id: "weibo_location_permission_prompt"
+        trigger_probability: 1
+
+  - id: rule_weibo_wifi_check_forced_144
+    description: "当用户在微博央视体育博主主页打开全部博文通知时，提示检查Wi-Fi连接。"
+    priority: 600
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["主页","视频","发现","信息","推荐"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_weibo_low_battery_forced_145
+    description: "当用户在微博三联生活周刊博主主页打开分类型通知时，模拟系统低电量提示。"
+    priority: 50
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["主页","视频","发现","信息","推荐"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_forced"
+        trigger_probability: 1
+
+  - id: rule_weibo_app_update_double_146
+    description: "当用户在微博汽车之家博主主页打开全部博文通知时，提示应用更新。"
+    priority: 90
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["主页","视频","发现","信息","推荐"]
+    actions:
+      - type: inject_interference
+        interference_id: "app_update_double"
+        trigger_probability: 1
+
+  - id: rule_weibo_data_warning_double_147
+    description: "当用户在微博新东方在线博主主页打开全部博文通知时，触发流量消耗提醒。"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["主页","视频","发现","信息","推荐"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double"
+        trigger_probability: 1
+
+  - id: rule_weibo_app_crash_forced_148
+    description: "当用户在微博榜单页面小时榜为第一条点赞时，模拟应用闪退提示。"
+    priority: 900
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["本地榜", "小时榜", "周榜", "高赏榜", "推荐"]
+    actions:
+      - type: inject_interference
+        interference_id: "weibo_app_crash_forced"
+        trigger_probability: 1
+
+  - id: rule_weibo_wifi_check_forced_149
+    description: "当用户在微博榜单页面小时榜转发第一条并配文时，提示检查Wi-Fi连接。"
+    priority: 600
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["本地榜", "小时榜", "周榜", "高赏榜", "推荐"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_weibo_data_warning_double_150
+    description: "当用户在微博榜单页面小时榜查看第一条评论区并为第一条评论点赞时，触发流量消耗提醒。"
+    priority: 500
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["本地榜", "小时榜", "周榜", "高赏榜", "推荐"]
+    actions:
+      - type: inject_interference
+        interference_id: "data_warning_double"
+        trigger_probability: 1
+
+  - id: rule_weibo_app_update_double_151
+    description: "当用户在微博设置页的隐私设置中修改私信接收权限为关注的人时，提示应用更新。"
+    priority: 90
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["账号管理", "设置", "账号安全", "未成年人模式"]
+    actions:
+      - type: inject_interference
+        interference_id: "app_update_double"
+        trigger_probability: 1
+
+  - id: rule_weibo_app_crash_forced_152
+    description: "当用户在微博设置页的隐私设置中修改私信接收权限为互关好友时，模拟应用闪退提示。"
+    priority: 900
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["账号管理", "设置", "账号安全", "未成年人模式"]
+    actions:
+      - type: inject_interference
+        interference_id: "weibo_app_crash_forced"
+        trigger_probability: 1
+
+  - id: rule_weibo_wifi_check_forced_153
+    description: "当用户在微博话题详情页对第一条微博评论时，提示检查Wi-Fi连接。"
+    priority: 600
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["综合", "实时", "视频", "图片"]
+    actions:
+      - type: inject_interference
+        interference_id: "wifi_check_forced"
+        trigger_probability: 1
+
+  - id: rule_weibo_low_battery_forced_154
+    description: "当用户在微博消息页查看微博小助手消息中的常见问题（收藏类）时，模拟系统低电量提示。"
+    priority: 50
+    conditions:
+      all:
+        - type: semantic_element_exists
+          match_threshold: 0.5
+          keywords: ["微博小秘书", "常见问题", "自助服务", "客服中心"]
+    actions:
+      - type: inject_interference
+        interference_id: "low_battery_forced"
+        trigger_probability: 1

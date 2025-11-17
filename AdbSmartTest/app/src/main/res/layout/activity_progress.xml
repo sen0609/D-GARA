@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    app:cardBackgroundColor="#212121"
+    app:cardCornerRadius="16dp"
+    tools:context=".ProgressActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/progress_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="正在处理" />
+
+        <TextView
+            android:id="@+id/progress_message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textColor="#BDBDBD"
+            tools:text="请稍候，我们正在为您准备数据..." />
+
+        <ProgressBar
+            android:id="@+id/dialog_progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp" android:layout_marginTop="20dp"
+            android:max="100"
+            android:progress="50"
+            tools:progress="60"
+
+            android:progressTint="#80CBC4"          android:progressBackgroundTint="#555555" />
+
+        <Button
+            android:id="@+id/progress_button"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="20dp"
+            android:textColor="#80CBC4"
+            android:textStyle="bold"
+            tools:text="取消" />
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
